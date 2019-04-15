@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24CF2E3C73E431CCBD77F3C7 /* Pods_NameCardHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */; };
 		5A5368A1226337A7006CC7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368A0226337A7006CC7E8 /* AppDelegate.swift */; };
 		5A5368A3226337A7006CC7E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368A2226337A7006CC7E8 /* ViewController.swift */; };
 		5A5368A6226337A7006CC7E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5368A4226337A7006CC7E8 /* Main.storyboard */; };
 		5A5368A8226337AA006CC7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5368A7226337AA006CC7E8 /* Assets.xcassets */; };
 		5A5368AB226337AA006CC7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5368A9226337AA006CC7E8 /* LaunchScreen.storyboard */; };
 		5A5368B6226337AA006CC7E8 /* NameCardHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368B5226337AA006CC7E8 /* NameCardHelperTests.swift */; };
+		AD392CAE758C520D6C60BA31 /* Pods_NameCardHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF5EFF1BCEE214D66C2EC2A /* Pods_NameCardHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameCardHelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AAADEDDE0F634B923CF213A /* Pods-NameCardHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper.release.xcconfig"; sourceTree = "<group>"; };
+		4BF5EFF1BCEE214D66C2EC2A /* Pods_NameCardHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameCardHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A53689D226337A7006CC7E8 /* NameCardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameCardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5368A0226337A7006CC7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5368A2226337A7006CC7E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		5A5368B1226337AA006CC7E8 /* NameCardHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NameCardHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5368B5226337AA006CC7E8 /* NameCardHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCardHelperTests.swift; sourceTree = "<group>"; };
 		5A5368B7226337AA006CC7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		646321DFC2B46270D95FC8B1 /* Pods-NameCardHelperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelperTests/Pods-NameCardHelperTests.release.xcconfig"; sourceTree = "<group>"; };
+		B7AF3A64067D062264502FCF /* Pods-NameCardHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		FCB42F72D46ADDC058294B56 /* Pods-NameCardHelperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelperTests/Pods-NameCardHelperTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD392CAE758C520D6C60BA31 /* Pods_NameCardHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24CF2E3C73E431CCBD77F3C7 /* Pods_NameCardHelperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				5A53689F226337A7006CC7E8 /* NameCardHelper */,
 				5A5368B4226337AA006CC7E8 /* NameCardHelperTests */,
 				5A53689E226337A7006CC7E8 /* Products */,
+				86ACEA057EEE7A00D3E13F41 /* Pods */,
+				A3DF0738C9697028A5CA9F33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,26 @@
 			path = NameCardHelperTests;
 			sourceTree = "<group>";
 		};
+		86ACEA057EEE7A00D3E13F41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7AF3A64067D062264502FCF /* Pods-NameCardHelper.debug.xcconfig */,
+				4AAADEDDE0F634B923CF213A /* Pods-NameCardHelper.release.xcconfig */,
+				FCB42F72D46ADDC058294B56 /* Pods-NameCardHelperTests.debug.xcconfig */,
+				646321DFC2B46270D95FC8B1 /* Pods-NameCardHelperTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A3DF0738C9697028A5CA9F33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BF5EFF1BCEE214D66C2EC2A /* Pods_NameCardHelper.framework */,
+				1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A5368BA226337AA006CC7E8 /* Build configuration list for PBXNativeTarget "NameCardHelper" */;
 			buildPhases = (
+				EC0FBEA88B4F1E7EA5FD0A1F /* [CP] Check Pods Manifest.lock */,
 				5A536899226337A7006CC7E8 /* Sources */,
 				5A53689A226337A7006CC7E8 /* Frameworks */,
 				5A53689B226337A7006CC7E8 /* Resources */,
+				60E153447BFB161014F5347D /* [CP] Embed Pods Frameworks */,
+				A2201B75EBF46E0D32449484 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,6 +155,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A5368BD226337AA006CC7E8 /* Build configuration list for PBXNativeTarget "NameCardHelperTests" */;
 			buildPhases = (
+				2E7EF92FBEB77C19EE3AC759 /* [CP] Check Pods Manifest.lock */,
 				5A5368AD226337AA006CC7E8 /* Sources */,
 				5A5368AE226337AA006CC7E8 /* Frameworks */,
 				5A5368AF226337AA006CC7E8 /* Resources */,
@@ -191,6 +227,119 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E7EF92FBEB77C19EE3AC759 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NameCardHelperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60E153447BFB161014F5347D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HFCardCollectionViewLayout/HFCardCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZLoadingActivity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HFCardCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2201B75EBF46E0D32449484 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC0FBEA88B4F1E7EA5FD0A1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NameCardHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A536899226337A7006CC7E8 /* Sources */ = {
@@ -358,6 +507,7 @@
 		};
 		5A5368BB226337AA006CC7E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7AF3A64067D062264502FCF /* Pods-NameCardHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +526,7 @@
 		};
 		5A5368BC226337AA006CC7E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AAADEDDE0F634B923CF213A /* Pods-NameCardHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +545,7 @@
 		};
 		5A5368BE226337AA006CC7E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCB42F72D46ADDC058294B56 /* Pods-NameCardHelperTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +567,7 @@
 		};
 		5A5368BF226337AA006CC7E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 646321DFC2B46270D95FC8B1 /* Pods-NameCardHelperTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

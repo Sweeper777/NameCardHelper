@@ -1,0 +1,6 @@
+framework module Pods_NameCardHelper {
+  umbrella header "Pods-NameCardHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}
