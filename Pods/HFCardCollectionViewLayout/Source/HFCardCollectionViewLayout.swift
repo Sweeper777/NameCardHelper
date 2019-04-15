@@ -510,19 +510,19 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
     private func initializeCardCollectionViewLayout() {
         self.collectionViewIsInitialized = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         self.collectionViewTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.collectionViewTapGestureHandler))
         self.collectionViewTapGestureRecognizer?.delegate = self
         self.collectionView?.addGestureRecognizer(self.collectionViewTapGestureRecognizer!)
     }
     
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         self.collectionViewIgnoreBottomContentOffsetChanges = true
     }
     
-    func keyboardDidHide(_ notification: Notification) {
+    @objc func keyboardDidHide(_ notification: Notification) {
         self.collectionViewIgnoreBottomContentOffsetChanges = false
     }
     
@@ -642,7 +642,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
     
     // MARK: Private Functions for UICollectionViewLayout
     
-    internal func collectionViewTapGestureHandler() {
+    @objc internal func collectionViewTapGestureHandler() {
         if let tapLocation = self.collectionViewTapGestureRecognizer?.location(in: self.collectionView) {
             if let indexPath = self.collectionView?.indexPathForItem(at: tapLocation) {
                 self.collectionView?.delegate?.collectionView?(self.collectionView!, didSelectItemAt: indexPath)
@@ -860,7 +860,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         }
     }
     
-    internal func revealedCardPanGestureHandler() {
+    @objc internal func revealedCardPanGestureHandler() {
         if self.collectionViewItemCount == 1 || self.revealedCardIsFlipped == true {
             return
         }
@@ -900,7 +900,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
     
     // MARK: Moving Card
     
-    internal func movingCardGestureHandler() {
+    @objc internal func movingCardGestureHandler() {
         let moveUpOffset: CGFloat = 20
         
         if let movingCardGestureRecognizer = self.movingCardGestureRecognizer {
@@ -982,7 +982,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
                                 self.collectionView?.insertSubview(self.movingCardSnapshotCell!, belowSubview: belowCell)
                                 self.movingCardSnapshotCell?.layer.zPosition = belowCell.layer.zPosition
                             } else {
-                                self.collectionView?.sendSubview(toBack: self.movingCardSnapshotCell!)
+                                self.collectionView?.sendSubviewToBack(self.movingCardSnapshotCell!)
                             }
                         }
                     }
@@ -1045,7 +1045,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         self.invalidateScrollTimer()
         self.autoscrollDisplayLink = CADisplayLink(target: self, selector: #selector(self.autoscrollHandler(displayLink:)))
         self.autoscrollDirection = direction
-        self.autoscrollDisplayLink?.add(to: .main, forMode: .commonModes)
+        self.autoscrollDisplayLink?.add(to: .main, forMode: RunLoop.Mode.common)
     }
     
     private func invalidateScrollTimer() {
@@ -1055,7 +1055,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         self.autoscrollDisplayLink = nil
     }
     
-    internal func autoscrollHandler(displayLink: CADisplayLink) {
+    @objc internal func autoscrollHandler(displayLink: CADisplayLink) {
         let direction = self.autoscrollDirection
         if(direction == .unknown) {
             return
@@ -1126,7 +1126,7 @@ open class HFCardCollectionViewLayout: UICollectionViewLayout, UIGestureRecogniz
         
         if(gestureRecognizer == self.revealedCardPanGestureRecognizer) {
             let velocity =  self.revealedCardPanGestureRecognizer?.velocity(in: self.revealedCardPanGestureRecognizer?.view)
-            let result = fabs(velocity!.y) > fabs(velocity!.x)
+            let result = abs(velocity!.y) > abs(velocity!.x)
             return result
         }
         return true
