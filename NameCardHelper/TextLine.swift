@@ -10,4 +10,7 @@ class TextLine: Object {
     
     let nameCard = LinkingObjects(fromType: NameCard.self, property: "lines")
     
+    var rect: CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
 }
