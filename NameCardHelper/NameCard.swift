@@ -8,6 +8,9 @@ class NameCard: Object {
     @objc dynamic var originalImage: Data? = nil
     @objc dynamic var aspectRatio = 0.0
     
+    var uiColor: UIColor {
+        return UIColor(rgb: color)
+    }
 }
 
 extension UIColor {
