@@ -32,4 +32,26 @@ class PreviewController: UIViewController {
         }
     }
     
+    func processVisionText(_ result: VisionText) -> NameCard? {
+        let lines = result.blocks.flatMap { $0.lines }
+        guard lines.count > 0 else { return nil }
+        let surroundingRect = lines.reduce(lines.first!.frame, { $0.union($1.frame) })
+        let textLines: [TextLine] = lines.map {
+            line in
+            let textLine = TextLine()
+            textLine.x = Double((line.frame.x - surroundingRect.x) / surroundingRect.width)
+            textLine.y = Double((line.frame.y - surroundingRect.y) / surroundingRect.height)
+            textLine.width = Double(line.frame.width / surroundingRect.width)
+            textLine.height = Double(line.frame.height / surroundingRect.height)
+            textLine.text = line.text
+            return textLine
+        }
+        let nameCard = NameCard()
+        nameCard.color = 0xffffff
+        nameCard.lines.append(objectsIn: textLines)
+        nameCard.originalImage = imageToProcess.pngData() ?? imageToProcess.jpegData(compressionQuality: 1)
+        nameCard.aspectRatio = Double(surroundingRect.width / surroundingRect.height)
+        return nameCard
+    }
+    
 }
