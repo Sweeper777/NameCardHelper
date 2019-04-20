@@ -43,6 +43,13 @@ class ViewController: UIViewController {
     func newGroup() {
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = (segue.destination as? UINavigationController)?.topViewController as? PreviewController,
+            let image = sender as? UIImage {
+            vc.imageToProcess = image
+        }
+    }
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
