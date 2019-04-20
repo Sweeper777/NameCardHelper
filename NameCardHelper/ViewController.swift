@@ -50,6 +50,10 @@ class ViewController: UIViewController {
             vc.imageToProcess = image
         }
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
