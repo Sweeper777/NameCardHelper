@@ -54,4 +54,37 @@ class PreviewController: UIViewController {
         return nameCard
     }
     
+    func displayNameCard(_ nameCard: NameCard) {
+        cardView.subviews.forEach { $0.removeFromSuperview() }
+        let padding = 5.f
+        let scaleX: CGFloat
+        let scaleY: CGFloat
+        let offsetX: CGFloat
+        let offsetY: CGFloat
+        if nameCard.aspectRatio.f > cardView.width / cardView.height {
+            scaleX = cardView.width
+            scaleY = scaleX / nameCard.aspectRatio.f
+            offsetX = 0
+            offsetY = (cardView.height - scaleY) / 2
+        } else {
+            scaleY = cardView.height
+            scaleX = scaleY * nameCard.aspectRatio.f
+            offsetY = 0
+            offsetX = (cardView.width - scaleX) / 2
+        }
+        for line in nameCard.lines {
+            var newFrame = line.rect.applying(CGAffineTransform(scaleX: scaleX - padding, y: scaleY - padding))
+            newFrame = newFrame.with(x: newFrame.x + offsetX)
+                                .with(y: newFrame.y + offsetY)
+            let label = UILabel(frame: newFrame)
+            label.backgroundColor = .clear
+            label.text = line.text
+            label.font = label.font.withSize(label.height * 2 / 3)
+            label.adjustsFontSizeToFitWidth = true
+            label.textAlignment = .center
+            label.numberOfLines = 1
+            cardView.addSubview(label)
+        }
+    }
+    
 }
