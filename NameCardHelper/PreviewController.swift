@@ -87,4 +87,7 @@ class PreviewController: UIViewController {
         }
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
