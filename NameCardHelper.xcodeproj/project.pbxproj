@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		24CF2E3C73E431CCBD77F3C7 /* Pods_NameCardHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */; };
+		5A4D26032264746D002FD19C /* TextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D26022264746D002FD19C /* TextLine.swift */; };
+		5A4D260522647820002FD19C /* NameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260422647820002FD19C /* NameCard.swift */; };
+		5A4D260722647A73002FD19C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260622647A73002FD19C /* Group.swift */; };
+		5A529EB62267106900E81D9A /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529EB52267106900E81D9A /* PreviewController.swift */; };
+		5A529EB822671EE400E81D9A /* FontSizeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529EB722671EE400E81D9A /* FontSizeHelper.swift */; };
+		5A529EBA226720DD00E81D9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */; };
 		5A5368A1226337A7006CC7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368A0226337A7006CC7E8 /* AppDelegate.swift */; };
 		5A5368A3226337A7006CC7E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368A2226337A7006CC7E8 /* ViewController.swift */; };
 		5A5368A6226337A7006CC7E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5368A4226337A7006CC7E8 /* Main.storyboard */; };
@@ -31,6 +37,12 @@
 		1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameCardHelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAADEDDE0F634B923CF213A /* Pods-NameCardHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper.release.xcconfig"; sourceTree = "<group>"; };
 		4BF5EFF1BCEE214D66C2EC2A /* Pods_NameCardHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameCardHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4D26022264746D002FD19C /* TextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLine.swift; sourceTree = "<group>"; };
+		5A4D260422647820002FD19C /* NameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCard.swift; sourceTree = "<group>"; };
+		5A4D260622647A73002FD19C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		5A529EB52267106900E81D9A /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
+		5A529EB722671EE400E81D9A /* FontSizeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSizeHelper.swift; sourceTree = "<group>"; };
+		5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A53689D226337A7006CC7E8 /* NameCardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameCardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5368A0226337A7006CC7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A5368A2226337A7006CC7E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +103,13 @@
 			children = (
 				5A5368A0226337A7006CC7E8 /* AppDelegate.swift */,
 				5A5368A2226337A7006CC7E8 /* ViewController.swift */,
+				5A529EB52267106900E81D9A /* PreviewController.swift */,
+				5A4D26022264746D002FD19C /* TextLine.swift */,
+				5A4D260422647820002FD19C /* NameCard.swift */,
+				5A4D260622647A73002FD19C /* Group.swift */,
+				5A529EB722671EE400E81D9A /* FontSizeHelper.swift */,
 				5A5368A4226337A7006CC7E8 /* Main.storyboard */,
+				5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */,
 				5A5368A7226337AA006CC7E8 /* Assets.xcassets */,
 				5A5368A9226337AA006CC7E8 /* LaunchScreen.storyboard */,
 				5A5368AC226337AA006CC7E8 /* Info.plist */,
@@ -214,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A5368AB226337AA006CC7E8 /* LaunchScreen.storyboard in Resources */,
+				5A529EBA226720DD00E81D9A /* GoogleService-Info.plist in Resources */,
 				5A5368A8226337AA006CC7E8 /* Assets.xcassets in Resources */,
 				5A5368A6226337A7006CC7E8 /* Main.storyboard in Resources */,
 			);
@@ -346,6 +365,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A529EB62267106900E81D9A /* PreviewController.swift in Sources */,
+				5A4D260522647820002FD19C /* NameCard.swift in Sources */,
+				5A529EB822671EE400E81D9A /* FontSizeHelper.swift in Sources */,
+				5A4D260722647A73002FD19C /* Group.swift in Sources */,
+				5A4D26032264746D002FD19C /* TextLine.swift in Sources */,
 				5A5368A3226337A7006CC7E8 /* ViewController.swift in Sources */,
 				5A5368A1226337A7006CC7E8 /* AppDelegate.swift in Sources */,
 			);
