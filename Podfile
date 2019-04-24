@@ -13,6 +13,8 @@ target 'NameCardHelper' do
   pod 'Eureka'
   pod 'RealmSwift'
   pod 'EZLoadingActivity'
+  pod 'DECResizeFontToFitRect'
+  pod 'DZLabel'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths

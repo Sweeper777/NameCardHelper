@@ -1,0 +1,6 @@
+framework module DECResizeFontToFitRect {
+  umbrella header "DECResizeFontToFitRect-umbrella.h"
+
+  export *
+  module * { export * }
+}

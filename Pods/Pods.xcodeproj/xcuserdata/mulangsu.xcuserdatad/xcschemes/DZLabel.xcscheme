@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "370E8859C93B36BD32F7C7DD3DAE5893"
-               BlueprintName = "Protobuf"
+               BlueprintIdentifier = "384A51511F643DD59D22A55713AF58F6"
+               BlueprintName = "DZLabel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Protobuf.framework">
+               BuildableName = "DZLabel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
