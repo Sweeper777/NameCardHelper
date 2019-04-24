@@ -2,6 +2,8 @@ import UIKit
 import Firebase
 import EZLoadingActivity
 import HFCardCollectionViewLayout
+import DECResizeFontToFitRect
+import DZLabel
 
 class PreviewController: UIViewController {
     var imageToProcess: UIImage!
@@ -78,11 +80,17 @@ class PreviewController: UIViewController {
                                 .with(y: newFrame.y + offsetY)
             let label = DZLabel(frame: newFrame)
             label.backgroundColor = .clear
-            label.text = line.text
-            label.font = label.font.withSize(label.height * 2 / 3)
-            label.adjustsFontSizeToFitWidth = true
-            label.textAlignment = .center
-            label.numberOfLines = 1
+            label.dzText = line.text
+            label.textAlignment = .left
+            label.dzEnabledTypes = [
+                .address, .phone, .url
+            ]
+            label.isScrollEnabled = false
+            label.dzFont = resize(font: label.font!,
+                                toRect: label.bounds,
+                                forString: label.dzText!,
+                                withMaxFontSize: 100,
+                                withMinFontSize: 0)
             cardView.addSubview(label)
         }
     }
