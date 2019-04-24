@@ -33,22 +33,22 @@ class PreviewController: UIViewController {
     }
     
     func processVisionText(_ result: VisionText) -> NameCard? {
-        let lines = result.blocks.flatMap { $0.lines }
-        guard lines.count > 0 else { return nil }
-        let surroundingRect = lines.reduce(lines.first!.frame, { $0.union($1.frame) })
-        let textLines: [TextLine] = lines.map {
-            line in
-            let textLine = TextLine()
-            textLine.x = Double((line.frame.x - surroundingRect.x) / surroundingRect.width)
-            textLine.y = Double((line.frame.y - surroundingRect.y) / surroundingRect.height)
-            textLine.width = Double(line.frame.width / surroundingRect.width)
-            textLine.height = Double(line.frame.height / surroundingRect.height)
-            textLine.text = line.text
-            return textLine
+        let blocks = result.blocks
+        guard blocks.count > 0 else { return nil }
+        let surroundingRect = blocks.reduce(blocks.first!.frame, { $0.union($1.frame) })
+        let textBlocks: [TextBlock] = blocks.map {
+            block in
+            let textBlock = TextBlock()
+            textBlock.x = Double((block.frame.x - surroundingRect.x) / surroundingRect.width)
+            textBlock.y = Double((block.frame.y - surroundingRect.y) / surroundingRect.height)
+            textBlock.width = Double(block.frame.width / surroundingRect.width)
+            textBlock.height = Double(block.frame.height / surroundingRect.height)
+            textBlock.text = block.lines.map { $0.text }.joined(separator: "\n")
+            return textBlock
         }
         let nameCard = NameCard()
         nameCard.color = 0xffffff
-        nameCard.lines.append(objectsIn: textLines)
+        nameCard.blocks.append(objectsIn: textBlocks)
         nameCard.originalImage = imageToProcess.pngData() ?? imageToProcess.jpegData(compressionQuality: 1)
         nameCard.aspectRatio = Double(surroundingRect.width / surroundingRect.height)
         return nameCard
@@ -72,11 +72,11 @@ class PreviewController: UIViewController {
             offsetY = 0
             offsetX = (cardView.width - scaleX) / 2
         }
-        for line in nameCard.lines {
+        for line in nameCard.blocks {
             var newFrame = line.rect.applying(CGAffineTransform(scaleX: scaleX - padding, y: scaleY - padding))
             newFrame = newFrame.with(x: newFrame.x + offsetX)
                                 .with(y: newFrame.y + offsetY)
-            let label = UILabel(frame: newFrame)
+            let label = DZLabel(frame: newFrame)
             label.backgroundColor = .clear
             label.text = line.text
             label.font = label.font.withSize(label.height * 2 / 3)
