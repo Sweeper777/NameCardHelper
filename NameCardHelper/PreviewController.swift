@@ -108,6 +108,11 @@ class PreviewController: UIViewController {
             }
         }
         return attributedString
+    private func sizeForUnitCharacter() -> CGSize {
+        let unitChar = NSAttributedString(string: "o", attributes: [.font: UIFont(name: "Menlo", size: 1)!])
+        return unitChar.size()
+    }
+    
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
