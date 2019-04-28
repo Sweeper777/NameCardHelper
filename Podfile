@@ -13,8 +13,6 @@ target 'NameCardHelper' do
   pod 'Eureka'
   pod 'RealmSwift'
   pod 'EZLoadingActivity'
-  pod 'DECResizeFontToFitRect'
-  pod 'DZLabel'
   pod 'ColorPickerRow', :git => 'https://github.com/EurekaCommunity/ColorPickerRow'
   pod 'ViewRow', :git => 'https://github.com/EurekaCommunity/ViewRow'
 
