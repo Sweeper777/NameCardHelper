@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84ED1F55706E30E0006B81B8F9313316"
-               BlueprintName = "RealmSwift"
+               BlueprintIdentifier = "B818633C7C44D0823DDDA394BCD2E399"
+               BlueprintName = "ColorPickerRow"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "RealmSwift.framework">
+               BuildableName = "ColorPickerRow.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,4 +1,7 @@
 PODS:
+  - ColorPickerRow (1.3.1):
+    - Eureka (>= 3.0.0)
+    - UIColor_Hex_Swift (>= 3.0.0)
   - DECResizeFontToFitRect (1.1.0)
   - DZLabel (1.2.5)
   - Eureka (4.3.1)
@@ -102,8 +105,12 @@ PODS:
   - RealmSwift (3.14.0):
     - Realm (= 3.14.0)
   - SwiftyUtils (3.0.0)
+  - UIColor_Hex_Swift (4.2.0)
+  - ViewRow (0.4.0):
+    - Eureka (>= 4.0.0)
 
 DEPENDENCIES:
+  - ColorPickerRow (from `https://github.com/EurekaCommunity/ColorPickerRow`)
   - DECResizeFontToFitRect
   - DZLabel
   - Eureka
@@ -114,6 +121,7 @@ DEPENDENCIES:
   - HFCardCollectionViewLayout
   - RealmSwift
   - SwiftyUtils (from `https://github.com/tbaranes/SwiftyUtils.git`, commit `982bffaadf8e831e75d3444dfba56af4d3962224`)
+  - ViewRow (from `https://github.com/EurekaCommunity/ViewRow`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -139,18 +147,30 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
+    - UIColor_Hex_Swift
 
 EXTERNAL SOURCES:
+  ColorPickerRow:
+    :git: https://github.com/EurekaCommunity/ColorPickerRow
   SwiftyUtils:
     :commit: 982bffaadf8e831e75d3444dfba56af4d3962224
     :git: https://github.com/tbaranes/SwiftyUtils.git
+  ViewRow:
+    :git: https://github.com/EurekaCommunity/ViewRow
 
 CHECKOUT OPTIONS:
+  ColorPickerRow:
+    :commit: 5513c34deee59881acf5f67a976ee0f4032470b9
+    :git: https://github.com/EurekaCommunity/ColorPickerRow
   SwiftyUtils:
     :commit: 982bffaadf8e831e75d3444dfba56af4d3962224
     :git: https://github.com/tbaranes/SwiftyUtils.git
+  ViewRow:
+    :commit: fdb0ad7e3ed763fc671f6d68749d3620a242d81d
+    :git: https://github.com/EurekaCommunity/ViewRow
 
 SPEC CHECKSUMS:
+  ColorPickerRow: ae26aa29e8ec0c52c21df8e3955b871a7e5b8985
   DECResizeFontToFitRect: dad95144228e12cbb27c5f2405d044359ceeb07b
   DZLabel: f79729a58eabb8f59e6e9379eefa6370add50c31
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
@@ -174,7 +194,9 @@ SPEC CHECKSUMS:
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
   SwiftyUtils: 9d09fedd742f9959e5682784657e913d5c554e6d
+  UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
+  ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
 
-PODFILE CHECKSUM: 93f6f8d6923299c1105c37354ba2170c45c5c632
+PODFILE CHECKSUM: 0fc459c62ff43ea81a332b380e52c9ce394b1584
 
 COCOAPODS: 1.5.3

@@ -1,0 +1,6 @@
+framework module ColorPickerRow {
+  umbrella header "ColorPickerRow-umbrella.h"
+
+  export *
+  module * { export * }
+}
