@@ -92,19 +92,6 @@ class PreviewController: UIViewController {
         }
     }
     
-    func addLinks(toString string: String) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: string)
-        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue | NSTextCheckingResult.CheckingType.link.rawValue) else {
-            return attributedString
-        }
-        for match in detector.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)) {
-            if match.resultType == .phoneNumber {
-                attributedString.addAttributes([.link: "tel://\(match.phoneNumber!)"], range: match.range)
-            } else if match.resultType == .link {
-                attributedString.addAttributes([.link: string[Range(match.range, in: string)!]], range: match.range)
-            }
-        }
-        return attributedString
     private func sizeForUnitCharacter() -> CGSize {
         let unitChar = NSAttributedString(string: "o", attributes: [.font: UIFont(name: "Menlo", size: 1)!])
         return unitChar.size()
