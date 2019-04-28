@@ -133,16 +133,54 @@
                         <viewLayoutGuide key="safeArea" id="sBi-GV-UB0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="mrh-BT-llE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FJ5-3M-wWC"/>
-                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="PMg-oZ-iUB"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FJ5-3M-wWC">
+                            <connections>
+                                <action selector="cancel" destination="Hds-PM-Aio" id="Lmg-kf-saK"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Next" style="done" id="PMg-oZ-iUB">
+                                <connections>
+                                    <action selector="next" destination="Hds-PM-Aio" id="hhg-1X-Wl4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="zoom in" id="Rox-gg-Pxl">
+                                <connections>
+                                    <action selector="zoom" destination="Hds-PM-Aio" id="ozh-cm-sCh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="cardView" destination="FOr-9Y-Tlk" id="hOm-Ur-wpU"/>
+                        <outlet property="zoomBarButton" destination="Rox-gg-Pxl" id="mi0-RU-IPZ"/>
+                        <segue destination="sGL-SS-kXq" kind="show" identifier="showOptions" id="N7K-x1-7M3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvi-Zr-SfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="953" y="908"/>
         </scene>
+        <!--Card Options-->
+        <scene sceneID="EeX-gL-lF0">
+            <objects>
+                <viewController id="sGL-SS-kXq" customClass="CardOptionsController" customModule="NameCardHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DAF-WQ-jYr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2a4-zD-KYx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Card Options" id="Fts-lC-zYg">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="St4-1W-lg7"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdI-Rv-yYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1731" y="907"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="zoom in" width="25" height="25"/>
+    </resources>
 </document>
