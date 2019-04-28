@@ -74,23 +74,20 @@ class PreviewController: UIViewController {
             offsetY = 0
             offsetX = (cardView.width - scaleX) / 2
         }
-        for line in nameCard.blocks {
-            var newFrame = line.rect.applying(CGAffineTransform(scaleX: scaleX - padding, y: scaleY - padding))
+        for block in nameCard.blocks {
+            var newFrame = block.rect.applying(CGAffineTransform(scaleX: scaleX - padding, y: scaleY - padding))
             newFrame = newFrame.with(x: newFrame.x + offsetX)
                                 .with(y: newFrame.y + offsetY)
-            let label = DZLabel(frame: newFrame)
+            let label = UITextView(frame: newFrame)
             label.backgroundColor = .clear
-            label.dzText = line.text
-            label.textAlignment = .left
-            label.dzEnabledTypes = [
-                .address, .phone, .url
-            ]
+            label.text = block.text
             label.isScrollEnabled = false
-            label.dzFont = resize(font: label.font!,
-                                toRect: label.bounds,
-                                forString: label.dzText!,
-                                withMaxFontSize: 100,
-                                withMinFontSize: 0)
+            label.isEditable = false
+            label.textContainer.lineFragmentPadding = 0
+            label.textContainerInset = .zero
+            label.dataDetectorTypes = [.phoneNumber, .link, .address]
+            label.textAlignment = .left
+            label.font = UIFont(name: "Menlo", size: fontSize(forString: block.text, toFit: label.bounds.size))
             cardView.addSubview(label)
         }
     }
