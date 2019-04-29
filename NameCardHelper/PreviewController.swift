@@ -7,6 +7,7 @@ import DZLabel
 
 class PreviewController: UIViewController {
     var imageToProcess: UIImage!
+    var nameCard: NameCard!
     
     @IBOutlet var cardView: UIView!
     @IBOutlet var zoomBarButton: UIBarButtonItem!
@@ -31,6 +32,7 @@ class PreviewController: UIViewController {
                 return
             }
             self?.displayNameCard(nameCard)
+            self?.nameCard = nameCard
             EZLoadingActivity.hide(true, animated: true)
         }
     }
