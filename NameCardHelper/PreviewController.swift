@@ -131,6 +131,10 @@ class PreviewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? CardOptionsController {
+            vc.nameCard = nameCard
+            vc.image = imageToProcess
         }
     }
 }
