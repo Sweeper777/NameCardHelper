@@ -106,6 +106,22 @@ class PreviewController: UIViewController {
         let eachCharacterMaxWidth = size.width / longestLineCharCount.f
         let eachCharacterMaxHeight = size.height / numberOfLines.f
         return min(eachCharacterMaxWidth / unitSize.width, eachCharacterMaxHeight / unitSize.height)
+    @IBAction func zoom() {
+        if cardView.transform == .identity {
+            zoomBarButton.image = UIImage(named: "zoom out")
+            UIView.animate(withDuration: 0.3) {
+                let heightRatio = self.view.width / self.cardView.height
+                let widthRatio = self.view.height / self.cardView.width
+                let scaleFactor = min(heightRatio, widthRatio)
+                self.cardView.transform = CGAffineTransform(rotationAngle: .pi / 2).scaledBy(x: scaleFactor, y: scaleFactor)
+            }
+        } else {
+            zoomBarButton.image = UIImage(named: "zoom in")
+            UIView.animate(withDuration: 0.3) {
+                self.cardView.transform = .identity
+            }
+        }
+    }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
