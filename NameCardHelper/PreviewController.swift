@@ -9,6 +9,7 @@ class PreviewController: UIViewController {
     var imageToProcess: UIImage!
     
     @IBOutlet var cardView: UIView!
+    @IBOutlet var zoomBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         cardView.layer.cornerRadius = 10
