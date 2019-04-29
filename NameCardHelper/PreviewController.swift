@@ -122,6 +122,9 @@ class PreviewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func next() {
+        performSegue(withIdentifier: "showOptions", sender: nil)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
