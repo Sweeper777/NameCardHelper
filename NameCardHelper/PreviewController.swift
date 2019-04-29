@@ -95,9 +95,10 @@ class PreviewController: UIViewController {
     private func sizeForUnitCharacter() -> CGSize {
         let unitChar = NSAttributedString(string: "o", attributes: [.font: UIFont(name: "Menlo", size: 1)!])
         return unitChar.size()
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
     }
     
-    private func fontSize(forString string: String, toFit size: CGSize) -> CGFloat {
         guard let longestLineCharCount = string.split(separator: "\n").map({ $0.count }).max() else { return 0 }
         let numberOfLines = string.filter { $0 == "\n" }.count + 1
         let unitSize = sizeForUnitCharacter()
@@ -108,5 +109,6 @@ class PreviewController: UIViewController {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+        }
     }
 }
