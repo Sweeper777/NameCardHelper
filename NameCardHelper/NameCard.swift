@@ -2,7 +2,7 @@ import RealmSwift
 import UIKit
 
 class NameCard: Object {
-    @objc dynamic var color = 0
+    @objc dynamic var color = 0xffffff
     let blocks = List<TextBlock>()
     let group = LinkingObjects(fromType: Group.self, property: "nameCard")
     @objc dynamic var originalImage: Data? = nil
