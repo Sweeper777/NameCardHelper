@@ -1,6 +1,25 @@
 import UIKit
 
 extension NameCard {
+    func populateView(_ cardView: UIView) {
+        let padding = 5.f
+        let scaleX: CGFloat
+        let scaleY: CGFloat
+        let offsetX: CGFloat
+        let offsetY: CGFloat
+        if self.aspectRatio.f > cardView.width / cardView.height {
+            scaleX = cardView.width
+            scaleY = scaleX / self.aspectRatio.f
+            offsetX = 0
+            offsetY = (cardView.height - scaleY) / 2
+        } else {
+            scaleY = cardView.height
+            scaleX = scaleY * self.aspectRatio.f
+            offsetY = 0
+            offsetX = (cardView.width - scaleX) / 2
+        }
+    }
+    
     private func sizeForUnitCharacter() -> CGSize {
         let unitChar = NSAttributedString(string: "o", attributes: [.font: UIFont(name: "Menlo", size: 1)!])
         return unitChar.size()
