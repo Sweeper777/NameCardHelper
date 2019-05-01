@@ -1,6 +1,13 @@
 import UIKit
 
 extension NameCard {
+    func createCardView(withWidth width: CGFloat) -> UIView {
+        let cardView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width / nameCardWHRatio))
+        populateView(cardView)
+        cardView.layer.cornerRadius = 10
+        return cardView
+    }
+    
     func populateView(_ cardView: UIView) {
         let padding = 5.f
         let scaleX: CGFloat
