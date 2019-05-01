@@ -16,6 +16,11 @@ class PreviewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if cardView.subviews.count > 0 {
+            return
+        }
+        
         EZLoadingActivity.show("Generating Preview...", disableUI: false)
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
