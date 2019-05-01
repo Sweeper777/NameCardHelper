@@ -2,8 +2,6 @@ import UIKit
 import Firebase
 import EZLoadingActivity
 import HFCardCollectionViewLayout
-import DECResizeFontToFitRect
-import DZLabel
 
 class PreviewController: UIViewController {
     var imageToProcess: UIImage!
@@ -59,55 +57,14 @@ class PreviewController: UIViewController {
         return nameCard
     }
     
-    func displayNameCard(_ nameCard: NameCard) {
-        cardView.subviews.forEach { $0.removeFromSuperview() }
-        let padding = 5.f
-        let scaleX: CGFloat
-        let scaleY: CGFloat
-        let offsetX: CGFloat
-        let offsetY: CGFloat
-        if nameCard.aspectRatio.f > cardView.width / cardView.height {
-            scaleX = cardView.width
-            scaleY = scaleX / nameCard.aspectRatio.f
-            offsetX = 0
-            offsetY = (cardView.height - scaleY) / 2
-        } else {
-            scaleY = cardView.height
-            scaleX = scaleY * nameCard.aspectRatio.f
-            offsetY = 0
-            offsetX = (cardView.width - scaleX) / 2
-        }
-        for block in nameCard.blocks {
-            var newFrame = block.rect.applying(CGAffineTransform(scaleX: scaleX - padding, y: scaleY - padding))
-            newFrame = newFrame.with(x: newFrame.x + offsetX)
-                                .with(y: newFrame.y + offsetY)
-            let label = UITextView(frame: newFrame)
-            label.backgroundColor = .clear
-            label.text = block.text
-            label.isScrollEnabled = false
-            label.isEditable = false
-            label.textContainer.lineFragmentPadding = 0
-            label.textContainerInset = .zero
-            label.dataDetectorTypes = [.phoneNumber, .link, .address]
-            label.textAlignment = .left
-            label.font = UIFont(name: "Menlo", size: fontSize(forString: block.text, toFit: label.bounds.size))
-            cardView.addSubview(label)
-        }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
-    private func sizeForUnitCharacter() -> CGSize {
-        let unitChar = NSAttributedString(string: "o", attributes: [.font: UIFont(name: "Menlo", size: 1)!])
-        return unitChar.size()
     @IBAction func cancel() {
         dismiss(animated: true, completion: nil)
     }
     
-        guard let longestLineCharCount = string.split(separator: "\n").map({ $0.count }).max() else { return 0 }
-        let numberOfLines = string.filter { $0 == "\n" }.count + 1
-        let unitSize = sizeForUnitCharacter()
-        let eachCharacterMaxWidth = size.width / longestLineCharCount.f
-        let eachCharacterMaxHeight = size.height / numberOfLines.f
-        return min(eachCharacterMaxWidth / unitSize.width, eachCharacterMaxHeight / unitSize.height)
     @IBAction func zoom() {
         if cardView.transform == .identity {
             zoomBarButton.image = UIImage(named: "zoom out")
