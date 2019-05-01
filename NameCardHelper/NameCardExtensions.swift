@@ -18,6 +18,24 @@ extension NameCard {
             offsetY = 0
             offsetX = (cardView.width - scaleX) / 2
         }
+        for block in self.blocks {
+            var newFrame = block.rect.applying(CGAffineTransform(scaleX: scaleX - padding, y: scaleY - padding))
+            newFrame = newFrame.with(x: newFrame.x + offsetX)
+                .with(y: newFrame.y + offsetY)
+            let label = UITextView(frame: newFrame)
+            label.backgroundColor = .clear
+            label.text = block.text
+            label.isScrollEnabled = false
+            label.isEditable = false
+            label.textContainer.lineFragmentPadding = 0
+            label.textContainerInset = .zero
+            label.dataDetectorTypes = [.phoneNumber, .link, .address]
+            label.textAlignment = .left
+            label.font = UIFont(name: "Menlo", size: fontSize(forString: block.text, toFit: label.bounds.size))
+            cardView.addSubview(label)
+        }
+        
+        cardView.backgroundColor = self.uiColor
     }
     
     private func sizeForUnitCharacter() -> CGSize {
