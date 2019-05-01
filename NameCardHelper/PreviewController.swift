@@ -34,8 +34,8 @@ class PreviewController: UIViewController {
                 EZLoadingActivity.hide(false, animated: true)
                 return
             }
-            self?.displayNameCard(nameCard)
             self?.nameCard = nameCard
+            self.map { nameCard.populateView($0.cardView) }
             EZLoadingActivity.hide(true, animated: true)
         }
     }
