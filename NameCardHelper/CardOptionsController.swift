@@ -66,5 +66,10 @@ class CardOptionsController: FormViewController {
                     ])
                 cell.palettes = [palette1, palette2, palette3, palette4, palette5, palette6]
         }
+            .onChange({ [weak self] (row) in
+                self?.nameCard.color = (row.value ?? .white).toInt()
+                (self?.form.rowBy(tag: tagPreview) as? ViewRow<UIView>)?.cell.view?.backgroundColor = row.value ?? .white
+            })
+        
     }
 }
