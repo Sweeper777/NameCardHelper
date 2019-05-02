@@ -11,6 +11,9 @@
 		5A4D26032264746D002FD19C /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D26022264746D002FD19C /* TextBlock.swift */; };
 		5A4D260522647820002FD19C /* NameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260422647820002FD19C /* NameCard.swift */; };
 		5A4D260722647A73002FD19C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260622647A73002FD19C /* Group.swift */; };
+		5A507C2A22743FBC0082D88C /* CardOptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A507C2922743FBC0082D88C /* CardOptionsController.swift */; };
+		5A507C2C227440D50082D88C /* NameCardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A507C2B227440D50082D88C /* NameCardExtensions.swift */; };
+		5A507C2E227441D80082D88C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A507C2D227441D80082D88C /* Constants.swift */; };
 		5A529EB62267106900E81D9A /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A529EB52267106900E81D9A /* PreviewController.swift */; };
 		5A529EBA226720DD00E81D9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */; };
 		5A5368A1226337A7006CC7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368A0226337A7006CC7E8 /* AppDelegate.swift */; };
@@ -39,6 +42,9 @@
 		5A4D26022264746D002FD19C /* TextBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlock.swift; sourceTree = "<group>"; };
 		5A4D260422647820002FD19C /* NameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCard.swift; sourceTree = "<group>"; };
 		5A4D260622647A73002FD19C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		5A507C2922743FBC0082D88C /* CardOptionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOptionsController.swift; sourceTree = "<group>"; };
+		5A507C2B227440D50082D88C /* NameCardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCardExtensions.swift; sourceTree = "<group>"; };
+		5A507C2D227441D80082D88C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5A529EB52267106900E81D9A /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A53689D226337A7006CC7E8 /* NameCardHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameCardHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,9 +108,12 @@
 				5A5368A0226337A7006CC7E8 /* AppDelegate.swift */,
 				5A5368A2226337A7006CC7E8 /* ViewController.swift */,
 				5A529EB52267106900E81D9A /* PreviewController.swift */,
+				5A507C2922743FBC0082D88C /* CardOptionsController.swift */,
 				5A4D26022264746D002FD19C /* TextBlock.swift */,
 				5A4D260422647820002FD19C /* NameCard.swift */,
+				5A507C2B227440D50082D88C /* NameCardExtensions.swift */,
 				5A4D260622647A73002FD19C /* Group.swift */,
+				5A507C2D227441D80082D88C /* Constants.swift */,
 				5A5368A4226337A7006CC7E8 /* Main.storyboard */,
 				5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */,
 				5A5368A7226337AA006CC7E8 /* Assets.xcassets */,
@@ -276,8 +285,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DECResizeFontToFitRect/DECResizeFontToFitRect.framework",
-				"${BUILT_PRODUCTS_DIR}/DZLabel/DZLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/ColorPickerRow/ColorPickerRow.framework",
 				"${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -289,14 +297,15 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ViewRow/ViewRow.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DECResizeFontToFitRect.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ColorPickerRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZLoadingActivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -308,6 +317,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,9 +380,12 @@
 				5A529EB62267106900E81D9A /* PreviewController.swift in Sources */,
 				5A4D260522647820002FD19C /* NameCard.swift in Sources */,
 				5A4D260722647A73002FD19C /* Group.swift in Sources */,
+				5A507C2A22743FBC0082D88C /* CardOptionsController.swift in Sources */,
 				5A4D26032264746D002FD19C /* TextBlock.swift in Sources */,
 				5A5368A3226337A7006CC7E8 /* ViewController.swift in Sources */,
+				5A507C2C227440D50082D88C /* NameCardExtensions.swift in Sources */,
 				5A5368A1226337A7006CC7E8 /* AppDelegate.swift in Sources */,
+				5A507C2E227441D80082D88C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
