@@ -71,5 +71,17 @@ class CardOptionsController: FormViewController {
                 (self?.form.rowBy(tag: tagPreview) as? ViewRow<UIView>)?.cell.view?.backgroundColor = row.value ?? .white
             })
         
+        form +++ Section("preview")
+        
+        <<< ViewRow<UIView>(tagPreview) {
+            row in
+            
+            }.cellSetup({ [weak self] (cell, row) in
+                cell.view = self?.nameCard.createCardView(withWidth: cell.width - cell.viewLeftMargin - cell.viewRightMargin)
+                cell.backgroundColor = .black
+            })
+//            .cellUpdate({ [weak self] (cell, row) in
+//                cell.view?.backgroundColor = self?.nameCard.uiColor ?? .white
+//            })
     }
 }
