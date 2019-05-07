@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="e98-70-DJ9" customClass="HFCardCollectionViewLayout" customModule="HFCardCollectionViewLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aZJ-XJ-S8G">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="aZJ-XJ-S8G" customClass="HFCardCollectionViewCell" customModule="HFCardCollectionViewLayout">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -88,6 +88,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="saC-wM-Zys" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="136.875" y="130.98591549295776"/>
         </scene>
@@ -172,8 +173,15 @@
                         <viewLayoutGuide key="safeArea" id="2a4-zD-KYx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Card Options" id="Fts-lC-zYg">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="St4-1W-lg7"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="St4-1W-lg7">
+                            <connections>
+                                <action selector="done" destination="sGL-SS-kXq" id="yUQ-dD-y1c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="saC-wM-Zys" kind="unwind" identifier="unwindToCardList" unwindAction="unwindFromNewCardWithSegue:" id="8g6-gX-fw2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdI-Rv-yYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
