@@ -1,4 +1,5 @@
 PODS:
+  - CircleMenu (4.0.1)
   - ColorPickerRow (1.3.1):
     - Eureka (>= 3.0.0)
     - UIColor_Hex_Swift (>= 3.0.0)
@@ -102,12 +103,14 @@ PODS:
   - Realm/Headers (3.14.0)
   - RealmSwift (3.14.0):
     - Realm (= 3.14.0)
+  - SnapKit (4.2.0)
   - SwiftyUtils (3.0.0)
   - UIColor_Hex_Swift (4.2.0)
   - ViewRow (0.4.0):
     - Eureka (>= 4.0.0)
 
 DEPENDENCIES:
+  - CircleMenu
   - ColorPickerRow (from `https://github.com/EurekaCommunity/ColorPickerRow`)
   - Eureka
   - EZLoadingActivity
@@ -116,11 +119,13 @@ DEPENDENCIES:
   - Firebase/MLVisionTextModel
   - HFCardCollectionViewLayout
   - RealmSwift
+  - SnapKit
   - SwiftyUtils (from `https://github.com/tbaranes/SwiftyUtils.git`, commit `982bffaadf8e831e75d3444dfba56af4d3962224`)
   - ViewRow (from `https://github.com/EurekaCommunity/ViewRow`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CircleMenu
     - Eureka
     - EZLoadingActivity
     - Firebase
@@ -141,6 +146,7 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
+    - SnapKit
     - UIColor_Hex_Swift
 
 EXTERNAL SOURCES:
@@ -164,6 +170,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/EurekaCommunity/ViewRow
 
 SPEC CHECKSUMS:
+  CircleMenu: d846569acbe805b75cef5793056707224240db64
   ColorPickerRow: ae26aa29e8ec0c52c21df8e3955b871a7e5b8985
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
@@ -185,10 +192,11 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyUtils: 9d09fedd742f9959e5682784657e913d5c554e6d
   UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
   ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
 
-PODFILE CHECKSUM: 03e0304d0edd8a3fcf56908edabb10fbe403a734
+PODFILE CHECKSUM: 1a1773e02b20b5c13cea7d765e9ac6c5290c6f43
 
 COCOAPODS: 1.5.3

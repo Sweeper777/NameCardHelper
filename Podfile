@@ -15,6 +15,8 @@ target 'NameCardHelper' do
   pod 'EZLoadingActivity'
   pod 'ColorPickerRow', :git => 'https://github.com/EurekaCommunity/ColorPickerRow'
   pod 'ViewRow', :git => 'https://github.com/EurekaCommunity/ViewRow'
+  pod 'SnapKit'
+  pod 'CircleMenu'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths
