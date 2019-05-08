@@ -80,8 +80,5 @@ class CardOptionsController: FormViewController {
                 cell.view = self?.nameCard.createCardView(withWidth: cell.width - cell.viewLeftMargin - cell.viewRightMargin)
                 cell.backgroundColor = .black
             })
-//            .cellUpdate({ [weak self] (cell, row) in
-//                cell.view?.backgroundColor = self?.nameCard.uiColor ?? .white
-//            })
     }
 }
