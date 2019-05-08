@@ -54,6 +54,10 @@ class ViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
+    
+    @IBAction func unwindFromNewCard(segue: UIStoryboardSegue) {
+        cardCollectionView.reloadData()
+    }
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
