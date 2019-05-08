@@ -81,4 +81,11 @@ class CardOptionsController: FormViewController {
                 cell.backgroundColor = .black
             })
     }
+    
+    @IBAction func done() {
+        try! RealmWrapper.shared.realm.write {
+            RealmWrapper.shared.realm.add(self.nameCard)
+        }
+        performSegue(withIdentifier: "unwindToCardList", sender: nil)
+    }
 }
