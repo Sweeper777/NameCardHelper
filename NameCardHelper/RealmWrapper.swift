@@ -14,4 +14,10 @@ final class RealmWrapper {
         }
     }
     
+    private static var _shared: RealmWrapper?
+    
+    static var shared: RealmWrapper {
+        _shared = _shared ?? RealmWrapper()
+        return _shared!
+    }
 }
