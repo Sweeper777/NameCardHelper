@@ -1,11 +1,21 @@
 import UIKit
 import SwiftyUtils
 import HFCardCollectionViewLayout
+import CircleMenu
+import SnapKit
 
 class ViewController: UIViewController {
 
     @IBOutlet var groupCollectionView: UICollectionView!
     @IBOutlet var cardCollectionView: UICollectionView!
+    
+    let circleMenuItems: [(icon: String, color: UIColor)] = [
+        ("delete", UIColor(hex: "a8383b")),
+        ("edit", UIColor(hex: "aa9239")),
+        ("move", UIColor(hex: "328a2e")),
+        ("zoom in", UIColor(hex: "3b3176")),
+        ("addContact", UIColor(hex: "246b61")),
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
