@@ -4,7 +4,7 @@ import UIKit
 class NameCard: Object {
     @objc dynamic var color = 0xffffff
     let blocks = List<TextBlock>()
-    let group = LinkingObjects(fromType: Group.self, property: "nameCard")
+    let group = LinkingObjects(fromType: Group.self, property: "nameCards")
     @objc dynamic var originalImage: Data? = nil
     @objc dynamic var aspectRatio = 0.0
     
