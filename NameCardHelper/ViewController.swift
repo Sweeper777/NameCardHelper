@@ -9,6 +9,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardCollectionView.dataSource = self
+        cardCollectionView.delegate = self
+        cardCollectionView.backgroundView = UIView()
+        
+        let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
+        layout.cardMaximumHeight = cardCollectionView.width / nameCardWHRatio
     }
 
     @IBAction func newPress() {
