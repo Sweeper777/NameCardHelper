@@ -69,3 +69,9 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
         }
     }
 }
+
+extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return RealmWrapper.shared.cards.count
+    }
+}
