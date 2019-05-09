@@ -74,4 +74,14 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return RealmWrapper.shared.cards.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HFCardCollectionViewCell
+        let model = RealmWrapper.shared.cards[indexPath.item]
+        cell.subviews.filter { $0 != cell.contentView }.forEach { $0.removeFromSuperview() }
+        model.populateView(cell)
+        cell.subviews.forEach { $0.isUserInteractionEnabled = false }
+        return cell
+    }
+    
 }
