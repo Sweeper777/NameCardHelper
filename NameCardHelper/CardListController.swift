@@ -4,7 +4,7 @@ import HFCardCollectionViewLayout
 import CircleMenu
 import SnapKit
 
-class ViewController: UIViewController {
+class CardListController: UIViewController {
 
     @IBOutlet var groupCollectionView: UICollectionView!
     @IBOutlet var cardCollectionView: UICollectionView!
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CardListController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true) { [ weak self] in
             if let image = info[.originalImage] as? UIImage {
@@ -103,7 +103,7 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
     }
 }
 
-extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+extension CardListController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return RealmWrapper.shared.cards.count
     }
@@ -127,7 +127,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     }
 }
 
-extension ViewController : CircleMenuDelegate {
+extension CardListController : CircleMenuDelegate {
     func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
         /*
          0. delete
