@@ -146,4 +146,18 @@ extension ViewController : CircleMenuDelegate {
     }
     
     func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
+        guard let cardView = cardCollectionView.indexPathsForSelectedItems?.first.map({ cardCollectionView.cellForItem(at: $0) }) as? UICollectionViewCell else { return }
+//        if cardView.transform == .identity {
+            UIView.animate(withDuration: 0.3) {
+                let heightRatio = self.cardCollectionView.width / cardView.height
+                let widthRatio = self.cardCollectionView.height / cardView.width
+                let scaleFactor = min(heightRatio, widthRatio)
+                cardView.transform = CGAffineTransform(rotationAngle: .pi / 2).scaledBy(x: scaleFactor, y: scaleFactor)
+            }
+//        } else {
+//            UIView.animate(withDuration: 0.3) {
+//                cardView.transform = .identity
+//            }
+//        }
+    }
 }
