@@ -23,6 +23,23 @@ class ViewController: UIViewController {
         cardCollectionView.delegate = self
         cardCollectionView.backgroundView = UIView()
         
+        let circleMenu = CircleMenu(frame: CGRect(x: 0, y: 0, width: 64, height: 64), normalIcon: "menu", selectedIcon: "close")
+        circleMenu.buttonsCount = 5
+        circleMenu.delegate = self
+        cardCollectionView.backgroundView!.addSubview(circleMenu)
+        circleMenu.startAngle = -90
+        circleMenu.endAngle = 90
+        circleMenu.layer.cornerRadius = 20
+//        circleMenu.layer.borderWidth = 2
+        circleMenu.backgroundColor = UIColor(hex: "3a7b3b")
+        circleMenu.duration = 0.5
+        circleMenu.snp.makeConstraints { (make) in
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(cardCollectionView.backgroundView!.snp.bottom).dividedBy(1.25)
+        }
+        
         let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
         layout.cardMaximumHeight = cardCollectionView.width / nameCardWHRatio
     }
