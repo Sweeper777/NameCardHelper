@@ -126,3 +126,24 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = false }
     }
 }
+
+extension ViewController : CircleMenuDelegate {
+    func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
+        /*
+         0. delete
+         1. edit
+         2. move to
+         3. zoom
+         4. add to contact
+         */
+        button.backgroundColor = circleMenuItems[atIndex].color
+        
+        button.setImage(UIImage(named: circleMenuItems[atIndex].icon), for: .normal)
+        
+        let highlightedImage = UIImage(named: circleMenuItems[atIndex].icon)?.withRenderingMode(.alwaysTemplate)
+        button.setImage(highlightedImage, for: .highlighted)
+        button.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+    }
+    
+    func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
+}
