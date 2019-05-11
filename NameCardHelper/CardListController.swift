@@ -8,6 +8,7 @@ class CardListController: UIViewController {
 
     @IBOutlet var groupCollectionView: UICollectionView!
     @IBOutlet var cardCollectionView: UICollectionView!
+    var circleMenu: CircleMenu!
     
     let circleMenuItems: [(icon: String, color: UIColor)] = [
         ("delete", UIColor(hex: "a8383b")),
@@ -23,7 +24,7 @@ class CardListController: UIViewController {
         cardCollectionView.delegate = self
         cardCollectionView.backgroundView = UIView()
         
-        let circleMenu = CircleMenu(frame: CGRect(x: 0, y: 0, width: 64, height: 64), normalIcon: "menu", selectedIcon: "close")
+        circleMenu = CircleMenu(frame: CGRect(x: 0, y: 0, width: 64, height: 64), normalIcon: "menu", selectedIcon: "close")
         circleMenu.buttonsCount = 5
         circleMenu.delegate = self
         cardCollectionView.backgroundView!.addSubview(circleMenu)
@@ -42,6 +43,7 @@ class CardListController: UIViewController {
         
         let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
         layout.cardMaximumHeight = cardCollectionView.width / nameCardWHRatio
+        cardCollectionView.backgroundView?.isHidden = true
     }
 
     @IBAction func newPress() {
@@ -120,10 +122,13 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         (collectionView.collectionViewLayout as! HFCardCollectionViewLayout).revealCardAt(index: indexPath.item)
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = true }
+        collectionView.backgroundView?.isHidden = false
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = false }
+        circleMenu.hideButtons(0)
+        collectionView.backgroundView?.isHidden = true
     }
 }
 
