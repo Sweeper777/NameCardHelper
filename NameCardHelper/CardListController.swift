@@ -105,12 +105,48 @@ extension CardListController : UIImagePickerControllerDelegate, UINavigationCont
     }
 }
 
+// MARK: Collection View Delegate and Data Source
+
 extension CardListController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RealmWrapper.shared.cards.count
+        if collectionView == cardCollectionView {
+            return cardCollectionView(collectionView, numberOfItemsInSection: section)
+        } else if collectionView == groupCollectionView {
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == cardCollectionView {
+            return cardCollectionView(collectionView, cellForItemAt: indexPath)
+        } else if collectionView == groupCollectionView {
+        } else {
+            return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == cardCollectionView {
+            cardCollectionView(collectionView, didSelectItemAt: indexPath)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == cardCollectionView {
+            cardCollectionView(collectionView, didDeselectItemAt: indexPath)
+        }
+    }
+}
+
+// MARK: Card Collection View Delegate and Data Source
+
+extension CardListController {
+    func cardCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return RealmWrapper.shared.cards.count
+    }
+    
+    func cardCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HFCardCollectionViewCell
         let model = RealmWrapper.shared.cards[indexPath.item]
         cell.subviews.filter { $0 != cell.contentView }.forEach { $0.removeFromSuperview() }
@@ -119,13 +155,13 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func cardCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         (collectionView.collectionViewLayout as! HFCardCollectionViewLayout).revealCardAt(index: indexPath.item)
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = true }
         collectionView.backgroundView?.isHidden = false
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func cardCollectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = false }
         circleMenu.hideButtons(0)
         collectionView.backgroundView?.isHidden = true
