@@ -42,7 +42,7 @@ class CardListController: UIViewController {
         }
         
         let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
-        layout.cardMaximumHeight = cardCollectionView.width / nameCardWHRatio
+        layout.cardMaximumHeight = UIScreen.width / nameCardWHRatio
         cardCollectionView.backgroundView?.isHidden = true
     }
 
