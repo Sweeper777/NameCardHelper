@@ -119,6 +119,7 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
         if collectionView == cardCollectionView {
             return cardCollectionView(collectionView, numberOfItemsInSection: section)
         } else if collectionView == groupCollectionView {
+            return groupCollectionView(collectionView, numberOfItemsInSection: section)
         } else {
             return 0
         }
@@ -128,6 +129,7 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
         if collectionView == cardCollectionView {
             return cardCollectionView(collectionView, cellForItemAt: indexPath)
         } else if collectionView == groupCollectionView {
+            return groupCollectionView(collectionView, cellForItemAt: indexPath)
         } else {
             return UICollectionViewCell()
         }
