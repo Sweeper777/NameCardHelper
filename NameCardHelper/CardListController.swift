@@ -47,6 +47,10 @@ class CardListController: UIViewController {
         let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
         layout.cardMaximumHeight = UIScreen.width / nameCardWHRatio
         cardCollectionView.backgroundView?.isHidden = true
+        
+        groupCollectionView.allowsMultipleSelection = false
+        groupCollectionView.dataSource = self
+        groupCollectionView.delegate = self
     }
 
     @IBAction func newPress() {
