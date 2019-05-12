@@ -172,6 +172,16 @@ extension CardListController {
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = false }
         circleMenu.hideButtons(0)
         collectionView.backgroundView?.isHidden = true
+}
+
+// MARK: Group Collection View Delegate, Data Source, and Layout Delegate
+
+extension CardListController : UICollectionViewDelegateFlowLayout {
+    func groupCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return RealmWrapper.shared.groups.count + 1
+        return groups.count + 1
+    }
+    
     }
 }
 
