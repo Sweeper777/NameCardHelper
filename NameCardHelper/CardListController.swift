@@ -182,6 +182,20 @@ extension CardListController : UICollectionViewDelegateFlowLayout {
         return groups.count + 1
     }
     
+    func groupCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GroupCollectionCell
+        if indexPath.item != 0 {
+//            let model = RealmWrapper.shared.groups[indexPath.item - 1]
+//            cell.label.text = model.name
+            cell.label.text = groups[indexPath.item - 1]
+            cell.label.font = UIFont.systemFont(ofSize: groupLabelFontSize)
+        } else {
+            cell.label.text = "Ungrouped"
+        }
+        
+        return cell
+    }
+    
     }
 }
 
