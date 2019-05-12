@@ -196,6 +196,20 @@ extension CardListController : UICollectionViewDelegateFlowLayout {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == groupCollectionView {
+            if indexPath.item != 0 {
+//                let model = RealmWrapper.shared.groups[indexPath.item - 1]
+//                let width = (model.name as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: UIFont.systemFontSize)]).width
+                let width = (groups[indexPath.item - 1] as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: groupLabelFontSize)]).width
+                return CGSize(width: width + 20, height: collectionView.height)
+            } else {
+                let width = ("Ungrouped" as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: groupLabelFontSize)]).width
+                return CGSize(width: width + 20, height: collectionView.height)
+            }
+        } else {
+            return CGSize(width: UIScreen.width, height: UIScreen.width / nameCardWHRatio)
+        }
     }
 }
 
