@@ -18,6 +18,9 @@ class CardListController: UIViewController {
         ("addContact", UIColor(hex: "246b61")),
         ]
     
+    let groups = ["Foo", "Bar", "Baz", "Long Group Name", "Others"]
+    let groupLabelFontSize = 17.f
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardCollectionView.dataSource = self
