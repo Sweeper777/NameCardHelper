@@ -158,12 +158,6 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
             cardCollectionView(collectionView, didSelectItemAt: indexPath)
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if collectionView == cardCollectionView {
-            cardCollectionView(collectionView, didDeselectItemAt: indexPath)
-        }
-    }
 }
 
 // MARK: Card Collection View Delegate and Data Source
@@ -184,8 +178,6 @@ extension CardListController {
     
     func cardCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         (collectionView.collectionViewLayout as! HFCardCollectionViewLayout).revealCardAt(index: indexPath.item)
-        collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = true }
-        collectionView.backgroundView?.isHidden = false
     }
 }
 
@@ -195,10 +187,6 @@ extension CardListController : HFCardCollectionViewLayoutDelegate {
         circleMenu.isHidden = false
     }
     
-    func cardCollectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = false }
-        circleMenu.hideButtons(0)
-        collectionView.backgroundView?.isHidden = true
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didUnrevealCardAtIndex index: Int) {
         cardCollectionView.cellForItem(at: IndexPath(item: index, section: 0))!.subviews.forEach { $0.isUserInteractionEnabled = false }
         circleMenu.isHidden = true
