@@ -187,11 +187,26 @@ extension CardListController {
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = true }
         collectionView.backgroundView?.isHidden = false
     }
+}
+
+extension CardListController : HFCardCollectionViewLayoutDelegate {
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didRevealCardAtIndex index: Int) {
+        cardCollectionView.cellForItem(at: IndexPath(item: index, section: 0))!.subviews.forEach { $0.isUserInteractionEnabled = true }
+        circleMenu.isHidden = false
+    }
     
     func cardCollectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)!.subviews.forEach { $0.isUserInteractionEnabled = false }
         circleMenu.hideButtons(0)
         collectionView.backgroundView?.isHidden = true
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didUnrevealCardAtIndex index: Int) {
+        cardCollectionView.cellForItem(at: IndexPath(item: index, section: 0))!.subviews.forEach { $0.isUserInteractionEnabled = false }
+        circleMenu.isHidden = true
+    }
+    
+    func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, willUnrevealCardAtIndex index: Int) {
+        circleMenu.hideButtons(0.5)
+    }
 }
 
 // MARK: Group Collection View Delegate, Data Source, and Layout Delegate
