@@ -102,6 +102,7 @@
                         <outlet property="cardCollectionView" destination="hba-zy-I1d" id="QW2-X4-qO8"/>
                         <outlet property="groupCollectionView" destination="fhi-4u-ptQ" id="Vie-5U-A6s"/>
                         <segue destination="PEJ-qV-Kvz" kind="show" identifier="showPreview" id="2l3-6w-5td"/>
+                        <segue destination="QjA-Vj-igU" kind="show" identifier="zoomIn" id="ydN-jT-Spd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="130.88455772113943"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="291-wr-tbl">
             <objects>
-                <navigationController id="PEJ-qV-Kvz" sceneMemberID="viewController">
+                <navigationController id="PEJ-qV-Kvz" customClass="MyNavigationController" customModule="NameCardHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6Yr-KC-J9j">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,7 +124,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ypv-QS-NR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="910"/>
+            <point key="canvasLocation" x="678" y="919"/>
+        </scene>
+        <!--My Navigation Controller-->
+        <scene sceneID="DQs-zd-v9J">
+            <objects>
+                <navigationController id="QjA-Vj-igU" customClass="MyNavigationController" customModule="NameCardHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="7Nb-6Y-71r">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xKF-9O-vXv" kind="relationship" relationship="rootViewController" id="Vct-XJ-KoP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdn-hQ-Lb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="1616"/>
         </scene>
         <!--Preview-->
         <scene sceneID="NRa-Gl-d84">
@@ -177,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvi-Zr-SfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="908"/>
+            <point key="canvasLocation" x="1494" y="916"/>
         </scene>
         <!--Card Options-->
         <scene sceneID="EeX-gL-lF0">
@@ -202,7 +219,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdI-Rv-yYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="907"/>
+            <point key="canvasLocation" x="2271" y="915"/>
+        </scene>
+        <!--Zoom View Controller-->
+        <scene sceneID="mQZ-4E-S1u">
+            <objects>
+                <viewController id="xKF-9O-vXv" customClass="ZoomViewController" customModule="NameCardHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wx6-Dp-dlR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWP-kK-obw">
+                                <rect key="frame" x="16" y="193.5" width="343" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zWP-kK-obw" secondAttribute="height" multiplier="1.586" id="Es4-Sg-fdt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zWP-kK-obw" firstAttribute="leading" secondItem="pfy-Ux-bCN" secondAttribute="leading" constant="16" id="87m-gS-Cg9"/>
+                            <constraint firstItem="zWP-kK-obw" firstAttribute="centerX" secondItem="Wx6-Dp-dlR" secondAttribute="centerX" id="Eug-SX-V3u"/>
+                            <constraint firstItem="pfy-Ux-bCN" firstAttribute="trailing" secondItem="zWP-kK-obw" secondAttribute="trailing" constant="16" id="a5z-mw-8Hw"/>
+                            <constraint firstItem="zWP-kK-obw" firstAttribute="centerY" secondItem="Wx6-Dp-dlR" secondAttribute="centerY" id="faj-a8-jIv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pfy-Ux-bCN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ALN-vU-ZW5">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="5ul-5q-CVy">
+                            <connections>
+                                <action selector="done" destination="xKF-9O-vXv" id="xFB-Zg-keF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardView" destination="zWP-kK-obw" id="8xj-mF-a7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ea-Mk-4Fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="1615"/>
         </scene>
     </scenes>
     <resources>
