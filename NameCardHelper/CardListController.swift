@@ -62,7 +62,8 @@ class CardListController: UIViewController {
         
         let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
         layout.cardMaximumHeight = UIScreen.width / nameCardWHRatio
-        cardCollectionView.backgroundView?.isHidden = true
+        layout.cardHeadHeight = UIScreen.width / nameCardWHRatio + 10
+        layout.scrollStopCardsAtTop = false
         
         groupCollectionView.allowsMultipleSelection = false
         groupCollectionView.dataSource = self
