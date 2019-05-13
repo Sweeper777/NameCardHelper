@@ -38,6 +38,7 @@ class CardListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shownCards = Array(RealmWrapper.shared.cards)
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
         cardCollectionView.backgroundView = UIView()
@@ -113,6 +114,7 @@ class CardListController: UIViewController {
     }
     
     @IBAction func unwindFromNewCard(segue: UIStoryboardSegue) {
+        shownCards = Array(RealmWrapper.shared.cards)
         cardCollectionView.reloadData()
     }
 }
@@ -167,12 +169,12 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
 
 extension CardListController {
     func cardCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RealmWrapper.shared.cards.count
+        return shownCards.count
     }
     
     func cardCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HFCardCollectionViewCell
-        let model = RealmWrapper.shared.cards[indexPath.item]
+        let model = shownCards[indexPath.item]
         cell.subviews.filter { $0 != cell.contentView }.forEach { $0.removeFromSuperview() }
         model.populateView(cell)
         cell.subviews.forEach { $0.isUserInteractionEnabled = false }
