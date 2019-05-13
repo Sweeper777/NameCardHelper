@@ -21,6 +21,21 @@ class CardListController: UIViewController {
     let groups = ["Foo", "Bar", "Baz", "Long Group Name", "Others"]
     let groupLabelFontSize = 17.f
     
+    var shownCards: [NameCard]!
+    
+    var selectedCard: NameCard? {
+        if shownCards.count == 1 {
+            return shownCards.first
+        } else {
+            let index = (cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout).revealedIndex
+            if index != -1 {
+                return shownCards[index]
+            } else {
+                return nil
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardCollectionView.dataSource = self
