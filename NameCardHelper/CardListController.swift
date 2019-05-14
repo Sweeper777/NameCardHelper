@@ -59,6 +59,7 @@ class CardListController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(cardCollectionView.backgroundView!.snp.bottom).dividedBy(1.25)
         }
+        circleMenu.isHidden = true
         
         let layout = cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
         layout.cardMaximumHeight = UIScreen.width / nameCardWHRatio
@@ -93,9 +94,10 @@ class CardListController: UIViewController {
     }
     
     func newCard(sourceType: UIImagePickerController.SourceType) {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
         imagePicker.sourceType = sourceType
         imagePicker.delegate = self
+        
         self.present(imagePicker, animated: true, completion: nil)
     }
     
