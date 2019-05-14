@@ -107,6 +107,9 @@ class CardListController: UIViewController {
         if let vc = (segue.destination as? UINavigationController)?.topViewController as? PreviewController,
             let image = sender as? UIImage {
             vc.imageToProcess = image
+        } else if let vc = (segue.destination as? UINavigationController)?.topViewController as? ZoomViewController,
+            let card = sender as? NameCard {
+            vc.card = card
         }
     }
     
