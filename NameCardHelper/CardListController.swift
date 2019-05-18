@@ -269,6 +269,14 @@ extension CardListController : CircleMenuDelegate {
         
         if atIndex == 3 {
             performSegue(withIdentifier: "zoomIn", sender: selectedCard)
+        } else if atIndex == 0 {
+            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            alert.addButton("Yes", action: { [weak self] in self?.deleteCard(atIndex: (self?.selectedCardIndex)!) })
+            alert.addButton("No", action: {})
+            alert.showWarning("Confirm", subTitle: "Are you sure you want to delete this card?")
         }
+    }
+    
+    func deleteCard(atIndex index: Int) {
     }
 }
