@@ -17,6 +17,7 @@ target 'NameCardHelper' do
   pod 'ViewRow', :git => 'https://github.com/EurekaCommunity/ViewRow'
   pod 'SnapKit'
   pod 'CircleMenu'
+  pod 'SCLAlertView'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths

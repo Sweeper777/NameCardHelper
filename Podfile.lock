@@ -103,6 +103,7 @@ PODS:
   - Realm/Headers (3.14.0)
   - RealmSwift (3.14.0):
     - Realm (= 3.14.0)
+  - SCLAlertView (0.8)
   - SnapKit (4.2.0)
   - SwiftyUtils (3.0.0)
   - UIColor_Hex_Swift (4.2.0)
@@ -119,6 +120,7 @@ DEPENDENCIES:
   - Firebase/MLVisionTextModel
   - HFCardCollectionViewLayout
   - RealmSwift
+  - SCLAlertView
   - SnapKit
   - SwiftyUtils (from `https://github.com/tbaranes/SwiftyUtils.git`, commit `982bffaadf8e831e75d3444dfba56af4d3962224`)
   - ViewRow (from `https://github.com/EurekaCommunity/ViewRow`)
@@ -146,6 +148,7 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
+    - SCLAlertView
     - SnapKit
     - UIColor_Hex_Swift
 
@@ -192,11 +195,12 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyUtils: 9d09fedd742f9959e5682784657e913d5c554e6d
   UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
   ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
 
-PODFILE CHECKSUM: 1a1773e02b20b5c13cea7d765e9ac6c5290c6f43
+PODFILE CHECKSUM: c075de0f2b5d8db4e96d56dae7aed59550619656
 
 COCOAPODS: 1.5.3
