@@ -278,5 +278,18 @@ extension CardListController : CircleMenuDelegate {
     }
     
     func deleteCard(atIndex index: Int) {
+        let card = shownCards[index]
+        (cardCollectionView.collectionViewLayout as? HFCardCollectionViewLayout)?.unrevealCard(completion: {
+            [weak self] in
+            self?.shownCards.remove(at: index)
+            self?.cardCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
+            do {
+                try RealmWrapper.shared.realm.write {
+                    RealmWrapper.shared.realm.delete(card)
+                }
+            } catch let error {
+                print(error)
+            }
+        })
     }
 }
