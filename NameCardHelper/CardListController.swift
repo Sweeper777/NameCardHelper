@@ -261,9 +261,9 @@ extension CardListController : CircleMenuDelegate {
     
     func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
         guard let selectedCard = self.selectedCard else {
-            
-            // TODO: SCLAlertView
-            
+            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            alert.addButton("OK", action: {})
+            alert.showWarning("Please select a card first!", subTitle: "")
             return
         }
         
