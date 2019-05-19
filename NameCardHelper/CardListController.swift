@@ -27,12 +27,16 @@ class CardListController: UIViewController {
         if shownCards.count == 1 {
             return shownCards.first
         } else {
+            return selectedCardIndex.map { shownCards[$0] }
+        }
+    }
+    
+    var selectedCardIndex: Int? {
+        if shownCards.count == 1 {
+            return 0
+        } else {
             let index = (cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout).revealedIndex
-            if index != -1 {
-                return shownCards[index]
-            } else {
-                return nil
-            }
+            return index == -1 ? nil : index
         }
     }
     
