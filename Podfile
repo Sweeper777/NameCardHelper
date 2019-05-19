@@ -18,6 +18,7 @@ target 'NameCardHelper' do
   pod 'SnapKit'
   pod 'CircleMenu'
   pod 'SCLAlertView'
+  pod 'EmptyDataSet-Swift'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths

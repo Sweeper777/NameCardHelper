@@ -3,6 +3,7 @@ PODS:
   - ColorPickerRow (1.3.1):
     - Eureka (>= 3.0.0)
     - UIColor_Hex_Swift (>= 3.0.0)
+  - EmptyDataSet-Swift (4.2.0)
   - Eureka (4.3.1)
   - EZLoadingActivity (1.01)
   - Firebase/Core (5.20.1):
@@ -113,6 +114,7 @@ PODS:
 DEPENDENCIES:
   - CircleMenu
   - ColorPickerRow (from `https://github.com/EurekaCommunity/ColorPickerRow`)
+  - EmptyDataSet-Swift
   - Eureka
   - EZLoadingActivity
   - Firebase/Core
@@ -128,6 +130,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CircleMenu
+    - EmptyDataSet-Swift
     - Eureka
     - EZLoadingActivity
     - Firebase
@@ -175,6 +178,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CircleMenu: d846569acbe805b75cef5793056707224240db64
   ColorPickerRow: ae26aa29e8ec0c52c21df8e3955b871a7e5b8985
+  EmptyDataSet-Swift: 1fa0b35f530a35f852ecb2b53564728b0c300aaf
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
@@ -201,6 +205,6 @@ SPEC CHECKSUMS:
   UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
   ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
 
-PODFILE CHECKSUM: c075de0f2b5d8db4e96d56dae7aed59550619656
+PODFILE CHECKSUM: e4c0592ff223709daef93c885461d4505d101f84
 
 COCOAPODS: 1.5.3
