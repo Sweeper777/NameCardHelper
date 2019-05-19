@@ -73,6 +73,8 @@ class CardListController: UIViewController {
         groupCollectionView.allowsMultipleSelection = false
         groupCollectionView.dataSource = self
         groupCollectionView.delegate = self
+        
+        groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
 
     @IBAction func newPress() {
