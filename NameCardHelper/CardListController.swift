@@ -3,6 +3,8 @@ import SwiftyUtils
 import HFCardCollectionViewLayout
 import CircleMenu
 import SnapKit
+import SCLAlertView
+import EmptyDataSet_Swift
 
 class CardListController: UIViewController {
 
@@ -45,8 +47,17 @@ class CardListController: UIViewController {
         shownCards = Array(RealmWrapper.shared.cards)
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
-        cardCollectionView.backgroundView = UIView()
         
+        cardCollectionView.emptyDataSetView { (view) in
+            view.titleLabelString(NSAttributedString(string: "No Cards"))
+                .detailLabelString(NSAttributedString(string: "Tap here to add a new card!"))
+                .isScrollAllowed(false)
+                .shouldDisplay(true)
+                .image(UIImage(named: "no cards"))
+                .didTapContentView(self.newPress)
+        }
+        
+        cardCollectionView.backgroundView = UIView()
         circleMenu = CircleMenu(frame: CGRect(x: 0, y: 0, width: 64, height: 64), normalIcon: "menu", selectedIcon: "close")
         circleMenu.buttonsCount = 5
         circleMenu.delegate = self
