@@ -42,7 +42,7 @@ class CardListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shownCards = Array(RealmWrapper.shared.cards)
+        shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
         
