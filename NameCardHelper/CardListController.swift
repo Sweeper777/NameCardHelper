@@ -21,6 +21,7 @@ class CardListController: UIViewController {
         ]
     
     let groupLabelFontSize = 17.f
+    var selectedGroupIndex = 0
     var shownCards: [NameCard]!
     
     var selectedCard: NameCard? {
