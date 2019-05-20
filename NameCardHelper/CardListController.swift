@@ -117,7 +117,23 @@ class CardListController: UIViewController {
     }
     
     func newGroup() {
-        
+        let dialog = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        let textField = dialog.addTextField("Group Name")
+        dialog.addButton("OK") {
+            guard let text = textField.text else { return }
+            guard text.trimmed() != "" else { return }
+            let group = Group()
+            group.name = text
+            do {
+                try RealmWrapper.shared.realm.write {
+                    RealmWrapper.shared.realm.add(group)
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        dialog.addButton("Cancel", action: {})
+        dialog.showEdit("Enter Name", subTitle: "")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
