@@ -27,6 +27,8 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cardCollectionView {
             cardCollectionView(collectionView, didSelectItemAt: indexPath)
+        } else if collectionView == groupCollectionView {
+            groupCollectionView(collectionView, didSelectItemAt: indexPath)
         }
     }
 }
