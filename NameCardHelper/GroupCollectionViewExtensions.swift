@@ -34,5 +34,11 @@ extension CardListController : UICollectionViewDelegateFlowLayout {
             return CGSize(width: UIScreen.width, height: UIScreen.width / nameCardWHRatio)
         }
     }
+    
+    func groupCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.item != selectedGroupIndex else { return }
+        selectedGroupIndex = indexPath.item
+        reloadCards()
+    }
 }
 
