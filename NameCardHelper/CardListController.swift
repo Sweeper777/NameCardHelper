@@ -152,7 +152,16 @@ class CardListController: UIViewController {
     }
     
     @IBAction func unwindFromNewCard(segue: UIStoryboardSegue) {
-        shownCards = Array(RealmWrapper.shared.cards)
+        reloadCards()
+    }
+    
+    func reloadCards() {
+        if selectedGroupIndex == 0 {
+            shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
+        } else {
+            let group = RealmWrapper.shared.groups[selectedGroupIndex - 1]
+            shownCards = Array(group.nameCards)
+        }
         cardCollectionView.reloadData()
     }
 }
