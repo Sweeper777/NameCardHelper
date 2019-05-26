@@ -57,7 +57,6 @@ class PreviewController: UIViewController {
         let nameCard = NameCard()
         nameCard.color = 0xffffff
         nameCard.blocks.append(objectsIn: textBlocks)
-        nameCard.originalImage = imageToProcess.pngData() ?? imageToProcess.jpegData(compressionQuality: 1)
         nameCard.aspectRatio = Double(surroundingRect.width / surroundingRect.height)
         return nameCard
     }
