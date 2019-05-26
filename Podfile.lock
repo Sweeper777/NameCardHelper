@@ -3,6 +3,7 @@ PODS:
   - ColorPickerRow (1.3.1):
     - Eureka (>= 3.0.0)
     - UIColor_Hex_Swift (>= 3.0.0)
+  - Differentiator (3.1.0)
   - EmptyDataSet-Swift (4.2.0)
   - Eureka (4.3.1)
   - EZLoadingActivity (1.01)
@@ -104,6 +105,18 @@ PODS:
   - Realm/Headers (3.14.0)
   - RealmSwift (3.14.0):
     - Realm (= 3.14.0)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
   - SCLAlertView (0.8)
   - SnapKit (4.2.0)
   - SwiftyUtils (3.0.0)
@@ -122,6 +135,10 @@ DEPENDENCIES:
   - Firebase/MLVisionTextModel
   - HFCardCollectionViewLayout
   - RealmSwift
+  - RxCocoa
+  - RxDataSources
+  - RxRealm
+  - RxSwift
   - SCLAlertView
   - SnapKit
   - SwiftyUtils (from `https://github.com/tbaranes/SwiftyUtils.git`, commit `982bffaadf8e831e75d3444dfba56af4d3962224`)
@@ -130,6 +147,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CircleMenu
+    - Differentiator
     - EmptyDataSet-Swift
     - Eureka
     - EZLoadingActivity
@@ -151,6 +169,11 @@ SPEC REPOS:
     - Protobuf
     - Realm
     - RealmSwift
+    - RxAtomic
+    - RxCocoa
+    - RxDataSources
+    - RxRealm
+    - RxSwift
     - SCLAlertView
     - SnapKit
     - UIColor_Hex_Swift
@@ -178,6 +201,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CircleMenu: d846569acbe805b75cef5793056707224240db64
   ColorPickerRow: ae26aa29e8ec0c52c21df8e3955b871a7e5b8985
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   EmptyDataSet-Swift: 1fa0b35f530a35f852ecb2b53564728b0c300aaf
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
@@ -199,12 +223,17 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyUtils: 9d09fedd742f9959e5682784657e913d5c554e6d
   UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
   ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
 
-PODFILE CHECKSUM: e4c0592ff223709daef93c885461d4505d101f84
+PODFILE CHECKSUM: 9a8bb03475693e1215b2c88ba5f5f2c4e97d5ad4
 
 COCOAPODS: 1.5.3

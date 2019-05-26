@@ -19,6 +19,10 @@ target 'NameCardHelper' do
   pod 'CircleMenu'
   pod 'SCLAlertView'
   pod 'EmptyDataSet-Swift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'RxRealm'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths
