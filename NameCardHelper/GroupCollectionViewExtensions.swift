@@ -39,6 +39,27 @@ extension CardListController : UICollectionViewDelegateFlowLayout {
         guard indexPath.item != selectedGroupIndex else { return }
         selectedGroupIndex = indexPath.item
         reloadCards()
+
+}
+
+struct GroupSection: AnimatableSectionModelType {
+    typealias Item = Group
+    
+    typealias Identity = String
+    
+    var items: [Item]
+    
+    var identity: String {
+        return ""
+    }
+    
+    init(original: GroupSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+    
+    init(items: [Item]) {
+        self.items = items
     }
 }
 
