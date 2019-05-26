@@ -10,12 +10,6 @@ class CardOptionsController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        form +++ SwitchRow(tagSaveOriginalImage) {
-            row in
-            row.title = "Save Original Image"
-            row.value = false
-        }
-        
         form +++ ColorPickerRow(tagColor) {
             row in
             row.title = NSLocalizedString("Background Color", comment: "")
