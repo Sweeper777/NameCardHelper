@@ -65,6 +65,17 @@ class CardOptionsController: FormViewController {
                 (self?.form.rowBy(tag: tagPreview) as? ViewRow<UIView>)?.cell.view?.backgroundColor = row.value ?? .white
             })
         
+        form +++ PushRow<Group>(tagAddToGroup) {
+            row in
+            let noneGroup = Group()
+            noneGroup.name = "None"
+            let newGroup = Group()
+            newGroup.name = "New Group"
+            row.options = [noneGroup] + Array(RealmWrapper.shared.groups) + [newGroup]
+            row.title = "Add to Group"
+            row.value = noneGroup
+        }
+        
         form +++ Section("preview")
         
         <<< ViewRow<UIView>(tagPreview) {
