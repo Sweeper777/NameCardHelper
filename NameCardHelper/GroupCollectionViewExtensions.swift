@@ -1,4 +1,5 @@
 import UIKit
+import RxDataSources
 
 // MARK: Group Collection View Delegate, Data Source, and Layout Delegate
 
@@ -63,3 +64,10 @@ struct GroupSection: AnimatableSectionModelType {
     }
 }
 
+extension Group : IdentifiableType {
+    typealias Identity = String
+    
+    var identity: String {
+        return name
+    }
+}
