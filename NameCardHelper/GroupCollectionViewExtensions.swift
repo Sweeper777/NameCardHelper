@@ -4,22 +4,7 @@ import RxDataSources
 // MARK: Group Collection View Delegate, Data Source, and Layout Delegate
 
 extension CardListController : UICollectionViewDelegateFlowLayout {
-    func groupCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RealmWrapper.shared.groups.count + 1
-    }
-    
-    func groupCollectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GroupCollectionCell
-        if indexPath.item != 0 {
-            let model = RealmWrapper.shared.groups[indexPath.item - 1]
-            cell.label.text = model.name
-            cell.label.font = UIFont.systemFont(ofSize: groupLabelFontSize)
-        } else {
-            cell.label.text = "Ungrouped"
-        }
-        
-        return cell
-    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == groupCollectionView {
@@ -36,10 +21,6 @@ extension CardListController : UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func groupCollectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.item != selectedGroupIndex else { return }
-        selectedGroupIndex = indexPath.item
-        reloadCards()
 
 }
 
