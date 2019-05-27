@@ -44,6 +44,8 @@ class CardListController: UIViewController {
         }
     }
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
@@ -87,6 +89,14 @@ class CardListController: UIViewController {
         groupCollectionView.dataSource = nil
         groupCollectionView.delegate = nil
         
+        let dataSource = RxCollectionViewSectionedAnimatedDataSource<GroupSection>(configureCell:  {
+            [weak self] _, collectionView, index, group in
+            guard let `self` = self else { return UICollectionViewCell() }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: index) as! GroupCollectionCell
+            cell.label.text = group.name
+            cell.label.font = UIFont.systemFont(ofSize: self.groupLabelFontSize)
+            return cell
+        })
         groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
 
