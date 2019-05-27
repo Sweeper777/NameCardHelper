@@ -24,7 +24,7 @@ class CardListController: UIViewController {
         ]
     
     let groupLabelFontSize = 17.f
-    var selectedGroupIndex = 0
+    var selectedGroup: Group?
     var shownCards: [NameCard]!
     
     var selectedCard: NameCard? {
@@ -184,12 +184,7 @@ class CardListController: UIViewController {
     }
     
     func reloadCards() {
-        if selectedGroupIndex == 0 {
-            shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
-        } else {
-            let group = RealmWrapper.shared.groups[selectedGroupIndex - 1]
-            shownCards = Array(group.nameCards)
-        }
+        shownCards = (selectedGroup?.nameCards).map { Array($0) } ?? []
         cardCollectionView.reloadData()
     }
 }
