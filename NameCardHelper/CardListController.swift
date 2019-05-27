@@ -5,6 +5,9 @@ import CircleMenu
 import SnapKit
 import SCLAlertView
 import EmptyDataSet_Swift
+import RxRealm
+import RxSwift
+import RxDataSources
 
 class CardListController: UIViewController {
 
@@ -81,8 +84,8 @@ class CardListController: UIViewController {
         layout.scrollStopCardsAtTop = false
         
         groupCollectionView.allowsMultipleSelection = false
-        groupCollectionView.dataSource = self
-        groupCollectionView.delegate = self
+        groupCollectionView.dataSource = nil
+        groupCollectionView.delegate = nil
         
         groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
