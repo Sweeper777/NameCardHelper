@@ -184,7 +184,11 @@ class CardListController: UIViewController {
     }
     
     func reloadCards() {
-        shownCards = (selectedGroup?.nameCards).map { Array($0) } ?? []
+        if selectedGroup?.name == "Ungrouped" {
+            shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
+        } else {
+            shownCards = (selectedGroup?.nameCards).map { Array($0) } ?? []
+        }
         cardCollectionView.reloadData()
     }
 }
