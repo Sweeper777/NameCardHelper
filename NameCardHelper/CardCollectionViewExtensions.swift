@@ -7,8 +7,6 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cardCollectionView {
             return cardCollectionView(collectionView, numberOfItemsInSection: section)
-        } else if collectionView == groupCollectionView {
-            return groupCollectionView(collectionView, numberOfItemsInSection: section)
         } else {
             return 0
         }
@@ -17,8 +15,6 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == cardCollectionView {
             return cardCollectionView(collectionView, cellForItemAt: indexPath)
-        } else if collectionView == groupCollectionView {
-            return groupCollectionView(collectionView, cellForItemAt: indexPath)
         } else {
             return UICollectionViewCell()
         }
@@ -27,8 +23,6 @@ extension CardListController : UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cardCollectionView {
             cardCollectionView(collectionView, didSelectItemAt: indexPath)
-        } else if collectionView == groupCollectionView {
-            groupCollectionView(collectionView, didSelectItemAt: indexPath)
         }
     }
 }
