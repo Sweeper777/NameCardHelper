@@ -89,6 +89,7 @@ class CardListController: UIViewController {
         groupCollectionView.dataSource = nil
         groupCollectionView.delegate = nil
         
+        let observable = Observable.collection(from: RealmWrapper.shared.groups.sorted(byKeyPath: "name"))
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<GroupSection>(configureCell:  {
             [weak self] _, collectionView, index, group in
             guard let `self` = self else { return UICollectionViewCell() }
@@ -97,6 +98,20 @@ class CardListController: UIViewController {
             cell.label.font = UIFont.systemFont(ofSize: self.groupLabelFontSize)
             return cell
         })
+        observable.map { x -> [GroupSection] in
+            let ungroupedGroup = Group()
+            ungroupedGroup.name = "Ungrouped"
+            let groups = [ungroupedGroup] + Array(x)
+            return [GroupSection(items: groups)]
+        }
+            .bind(to: groupCollectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        groupCollectionView.rx.modelSelected(Group.self).bind { [weak self] (group) in
+            guard let `self` = self else { return }
+            guard group != self.selectedGroup else { return }
+            self.selectedGroup = group
+            self.reloadCards()
+        }.disposed(by: disposeBag)
         groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
 
