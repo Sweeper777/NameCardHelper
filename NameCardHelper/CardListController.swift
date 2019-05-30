@@ -98,6 +98,7 @@ class CardListController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: index) as! GroupCollectionCell
             cell.label.text = group.name
             cell.label.font = UIFont.systemFont(ofSize: self.groupLabelFontSize)
+            cell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.didLongTapGroupCell)))
             return cell
         })
         observable.map { [unowned self] x -> [GroupSection] in
@@ -135,6 +136,34 @@ class CardListController: UIViewController {
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    @objc func didLongTapGroupCell(gestureRecogniser: UIGestureRecognizer) {
+        if gestureRecogniser.state == .began {
+            let point = gestureRecogniser.location(ofTouch: 0, in: self.groupCollectionView)
+            guard let index = groupCollectionView.indexPathForItem(at: point) else { return }
+            guard let group: Group = try? groupCollectionView.rx.model(at: index) else { return }
+            guard group != ungroupedGroup else { return }
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "Delete \"\(group.name)\"", style: .destructive, handler: {
+                [weak self] _ in
+                self?.deleteGroup(group)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Rename", style: .default, handler: {
+                [weak self] _ in
+                self?.renameGroup(group)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+    }
+    
+    func deleteGroup(_ group: Group) {
+        
+    }
+    
+    func renameGroup(_ group: Group) {
+        
     }
     
     func newCard(sourceType: UIImagePickerController.SourceType) {
