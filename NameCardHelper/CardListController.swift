@@ -151,6 +151,14 @@ class CardListController: UIViewController {
         dialog.addButton("OK") {
             guard let text = textField.text else { return }
             guard text.trimmed() != "" else { return }
+            
+            if text == "Ungrouped" || text == "New Group" || RealmWrapper.shared.groups.filter("name == %@", text).count > 0 {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("OK", action: {})
+                alert.showError("Error", subTitle: "You cannot have a group with this name!")
+                return
+            }
+            
             let group = Group()
             group.name = text
             do {
