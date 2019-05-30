@@ -24,6 +24,7 @@ class CardListController: UIViewController {
         ]
     
     let groupLabelFontSize = 17.f
+    let ungroupedGroup = Group()
     var selectedGroup: Group?
     var shownCards: [NameCard]!
     
@@ -48,6 +49,7 @@ class CardListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ungroupedGroup.name = "Ungrouped"
         shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
@@ -98,10 +100,8 @@ class CardListController: UIViewController {
             cell.label.font = UIFont.systemFont(ofSize: self.groupLabelFontSize)
             return cell
         })
-        observable.map { x -> [GroupSection] in
-            let ungroupedGroup = Group()
-            ungroupedGroup.name = "Ungrouped"
-            let groups = [ungroupedGroup] + Array(x)
+        observable.map { [unowned self] x -> [GroupSection] in
+            let groups = [self.ungroupedGroup] + Array(x)
             return [GroupSection(items: groups)]
         }
             .bind(to: groupCollectionView.rx.items(dataSource: dataSource))
