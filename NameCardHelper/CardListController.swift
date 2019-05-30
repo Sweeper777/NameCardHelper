@@ -87,7 +87,7 @@ class CardListController: UIViewController {
         
         groupCollectionView.allowsMultipleSelection = false
         groupCollectionView.dataSource = nil
-        groupCollectionView.delegate = nil
+        groupCollectionView.delegate = self
         
         let observable = Observable.collection(from: RealmWrapper.shared.groups.sorted(byKeyPath: "name"))
         let dataSource = RxCollectionViewSectionedAnimatedDataSource<GroupSection>(configureCell:  {
