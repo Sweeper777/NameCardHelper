@@ -7,8 +7,4 @@ class Group: Object {
     override var description: String {
         return name
     }
-    
-    override static func primaryKey() -> String? {
-        return "name"
-    }
 }
