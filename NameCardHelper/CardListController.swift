@@ -98,6 +98,7 @@ class CardListController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: index) as! GroupCollectionCell
             cell.label.text = group.name
             cell.label.font = UIFont.systemFont(ofSize: self.groupLabelFontSize)
+            cell.gestureRecognizers?.removeAll()
             cell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.didLongTapGroupCell)))
             return cell
         })
