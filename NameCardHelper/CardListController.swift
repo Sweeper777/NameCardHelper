@@ -160,7 +160,17 @@ class CardListController: UIViewController {
     }
     
     func deleteGroup(_ group: Group) {
-        
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes") {
+            try? RealmWrapper.shared.realm.write {
+                for card in group.nameCards {
+                    RealmWrapper.shared.realm.delete(card)
+                }
+                RealmWrapper.shared.realm.delete(group)
+            }
+        }
+        alert.addButton("No", action: {})
+        alert.showWarning("Confirm", subTitle: "Deleting this group will delete all the cards in it. Are you sure?")
     }
     
     func renameGroup(_ group: Group) {
