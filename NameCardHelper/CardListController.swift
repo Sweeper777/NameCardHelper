@@ -174,7 +174,16 @@ class CardListController: UIViewController {
     }
     
     func renameGroup(_ group: Group) {
-        
+        let dialog = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        let textField = dialog.addTextField()
+        textField.text = group.name
+        dialog.addButton("OK") {
+            try? RealmWrapper.shared.realm.write {
+                group.name = textField.text!
+            }
+        }
+        dialog.addButton("Cancel", action: {})
+        dialog.showEdit("Rename", subTitle: "Enter a new name:")
     }
     
     func newCard(sourceType: UIImagePickerController.SourceType) {
