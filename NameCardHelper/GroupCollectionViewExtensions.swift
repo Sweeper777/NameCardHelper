@@ -45,6 +45,6 @@ extension Group : IdentifiableType {
     typealias Identity = String
     
     var identity: String {
-        return name
+        return isInvalidated ? "deleted-object-\(UUID().uuidString)" : name
     }
 }
