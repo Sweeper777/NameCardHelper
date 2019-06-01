@@ -24,7 +24,6 @@ class CardListController: UIViewController {
         ]
     
     let groupLabelFontSize = 17.f
-    let ungroupedGroup = Group()
     var selectedGroup: Group?
     var shownCards: [NameCard]!
     
@@ -49,7 +48,6 @@ class CardListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ungroupedGroup.name = "Ungrouped"
         shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
@@ -102,8 +100,8 @@ class CardListController: UIViewController {
             cell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.didLongTapGroupCell)))
             return cell
         })
-        observable.map { [unowned self] x -> [GroupSection] in
-            let groups = [self.ungroupedGroup] + Array(x)
+        observable.map { x -> [GroupSection] in
+            let groups = [.ungrouped] + Array(x)
             return [GroupSection(items: groups)]
         }
             .bind(to: groupCollectionView.rx.items(dataSource: dataSource))
@@ -114,6 +112,7 @@ class CardListController: UIViewController {
             self.selectedGroup = group
             self.reloadCards()
         }.disposed(by: disposeBag)
+        
         groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
 
@@ -144,7 +143,7 @@ class CardListController: UIViewController {
             let point = gestureRecogniser.location(ofTouch: 0, in: self.groupCollectionView)
             guard let index = groupCollectionView.indexPathForItem(at: point) else { return }
             guard let group: Group = try? groupCollectionView.rx.model(at: index) else { return }
-            guard group != ungroupedGroup else { return }
+            guard group != .ungrouped else { return }
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "Delete \"\(group.name)\"", style: .destructive, handler: {
                 [weak self] _ in
