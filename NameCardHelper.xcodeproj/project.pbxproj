@@ -11,6 +11,8 @@
 		5A4D26032264746D002FD19C /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D26022264746D002FD19C /* TextBlock.swift */; };
 		5A4D260522647820002FD19C /* NameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260422647820002FD19C /* NameCard.swift */; };
 		5A4D260722647A73002FD19C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260622647A73002FD19C /* Group.swift */; };
+		5A4E017822A124F50042C913 /* MoveToGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E017722A124F50042C913 /* MoveToGroupController.swift */; };
+		5A4E017A22A177E90042C913 /* MoveToGroupControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E017922A177E90042C913 /* MoveToGroupControllerDelegate.swift */; };
 		5A4F770D228FFBC100346F7B /* CardCollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F770C228FFBC100346F7B /* CardCollectionViewExtensions.swift */; };
 		5A4F770F228FFC3300346F7B /* GroupCollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F770E228FFC3300346F7B /* GroupCollectionViewExtensions.swift */; };
 		5A4F7711228FFCA300346F7B /* CardListCircleMenuExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F7710228FFCA300346F7B /* CardListCircleMenuExtensions.swift */; };
@@ -49,6 +51,8 @@
 		5A4D26022264746D002FD19C /* TextBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlock.swift; sourceTree = "<group>"; };
 		5A4D260422647820002FD19C /* NameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCard.swift; sourceTree = "<group>"; };
 		5A4D260622647A73002FD19C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		5A4E017722A124F50042C913 /* MoveToGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToGroupController.swift; sourceTree = "<group>"; };
+		5A4E017922A177E90042C913 /* MoveToGroupControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToGroupControllerDelegate.swift; sourceTree = "<group>"; };
 		5A4F770C228FFBC100346F7B /* CardCollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewExtensions.swift; sourceTree = "<group>"; };
 		5A4F770E228FFC3300346F7B /* GroupCollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewExtensions.swift; sourceTree = "<group>"; };
 		5A4F7710228FFCA300346F7B /* CardListCircleMenuExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCircleMenuExtensions.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				5A529EB52267106900E81D9A /* PreviewController.swift */,
 				5A507C2922743FBC0082D88C /* CardOptionsController.swift */,
 				5A4FB4FB22873623005EC954 /* ZoomViewController.swift */,
+				5A4E017722A124F50042C913 /* MoveToGroupController.swift */,
+				5A4E017922A177E90042C913 /* MoveToGroupControllerDelegate.swift */,
 				5A4FB4FD2287392D005EC954 /* MyControllers.swift */,
 				5A4FB4F92286B90C005EC954 /* GroupCollectionCell.swift */,
 				5A4D26022264746D002FD19C /* TextBlock.swift */,
@@ -420,6 +426,7 @@
 			files = (
 				5A529EB62267106900E81D9A /* PreviewController.swift in Sources */,
 				5A4FB4FA2286B90C005EC954 /* GroupCollectionCell.swift in Sources */,
+				5A4E017A22A177E90042C913 /* MoveToGroupControllerDelegate.swift in Sources */,
 				5A4F7711228FFCA300346F7B /* CardListCircleMenuExtensions.swift in Sources */,
 				5A4F770F228FFC3300346F7B /* GroupCollectionViewExtensions.swift in Sources */,
 				5A4F770D228FFBC100346F7B /* CardCollectionViewExtensions.swift in Sources */,
@@ -433,6 +440,7 @@
 				5A507C2C227440D50082D88C /* NameCardExtensions.swift in Sources */,
 				5A5143F2227EF19F002991EE /* RealmWrapper.swift in Sources */,
 				5A5368A1226337A7006CC7E8 /* AppDelegate.swift in Sources */,
+				5A4E017822A124F50042C913 /* MoveToGroupController.swift in Sources */,
 				5A507C2E227441D80082D88C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
