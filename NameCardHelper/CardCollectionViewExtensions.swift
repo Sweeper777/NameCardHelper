@@ -55,7 +55,7 @@ extension CardListController : HFCardCollectionViewLayoutDelegate {
     }
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, didUnrevealCardAtIndex index: Int) {
-        cardCollectionView.cellForItem(at: IndexPath(item: index, section: 0))!.subviews.forEach { $0.isUserInteractionEnabled = false }
+        cardCollectionView.cellForItem(at: IndexPath(item: index, section: 0))?.subviews.forEach { $0.isUserInteractionEnabled = false }
         circleMenu.isHidden = true
     }
     
