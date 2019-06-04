@@ -253,6 +253,7 @@ class CardListController: UIViewController {
             shownCards = (selectedGroup?.nameCards).map { Array($0) } ?? []
         }
         cardCollectionView.reloadData()
+        (cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout).unrevealCard()
     }
 }
 
