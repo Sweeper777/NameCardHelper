@@ -97,8 +97,19 @@ class CardOptionsController: FormViewController {
     }
     
     @IBAction func done() {
-        try! RealmWrapper.shared.realm.write {
-            RealmWrapper.shared.realm.add(self.nameCard)
+        let values = form.values(includeHidden: false)
+        if let group = values[tagAddToGroup] as? Group {
+            if group.name != "None" {
+                if group.name == "New Group" {
+                    let newGroup = Group()
+                    newGroup.name = values[tagNewGroupName] as? String ?? ""
+                    if !newGroup.validateAndShowAlert() {
+                        return
+                    }
+                } else {
+                }
+            } else {
+            }
         }
         performSegue(withIdentifier: "unwindToCardList", sender: nil)
     }
