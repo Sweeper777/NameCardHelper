@@ -106,9 +106,19 @@ class CardOptionsController: FormViewController {
                     if !newGroup.validateAndShowAlert() {
                         return
                     }
+                    newGroup.nameCards.append(nameCard)
+                    try! RealmWrapper.shared.realm.write {
+                        RealmWrapper.shared.realm.add(newGroup)
+                    }
                 } else {
+                    try! RealmWrapper.shared.realm.write {
+                        group.nameCards.append(self.nameCard)
+                    }
                 }
             } else {
+                try! RealmWrapper.shared.realm.write {
+                    RealmWrapper.shared.realm.add(self.nameCard)
+                }
             }
         }
         performSegue(withIdentifier: "unwindToCardList", sender: nil)
