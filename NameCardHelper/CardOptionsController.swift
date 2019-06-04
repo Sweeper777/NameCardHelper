@@ -76,6 +76,15 @@ class CardOptionsController: FormViewController {
             row.value = noneGroup
         }
         
+        <<< TextRow(tagNewGroupName) {
+            row in
+            row.title = "Name"
+            row.hidden = Condition.function([tagAddToGroup], { (form) -> Bool in
+                let addToGroupRow: RowOf<Group> = form.rowBy(tag: tagAddToGroup)!
+                return addToGroupRow.value?.name != "New Group"
+            })
+        }
+        
         form +++ Section("preview")
         
         <<< ViewRow<UIView>(tagPreview) {
