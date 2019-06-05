@@ -36,6 +36,10 @@ extension CardListController : CircleMenuDelegate {
             alert.addButton("Yes", action: { [weak self] in self?.deleteCard(atIndex: (self?.selectedCardIndex)!) })
             alert.addButton("No", action: {})
             alert.showWarning("Confirm", subTitle: "Are you sure you want to delete this card?")
+        } else if atIndex == 2 {
+            performSegue(withIdentifier: "showMoveToGroup", sender: selectedCard.group.first ?? .ungrouped)
+        } else if atIndex == 4 {
+        } else if atIndex == 1 {
         }
     }
     
