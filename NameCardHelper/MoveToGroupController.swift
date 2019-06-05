@@ -31,4 +31,15 @@ class MoveToGroupController : UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            selectedGroup = .ungrouped
+            delegate?.didSelectGroup(moveToGroupController: self, group: nil)
+        } else {
+            selectedGroup = groups[indexPath.row - 1]
+            delegate?.didSelectGroup(moveToGroupController: self, group: selectedGroup)
+        }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        dismiss(animated: true, completion: nil)
+    }
 }
