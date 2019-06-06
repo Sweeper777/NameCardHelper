@@ -235,6 +235,10 @@ class CardListController: UIViewController {
         } else if let vc = (segue.destination as? UINavigationController)?.topViewController as? ZoomViewController,
             let card = sender as? NameCard {
             vc.card = card
+        } else if let vc = (segue.destination as? UINavigationController)?.topViewController as? MoveToGroupController,
+            let group = sender as? Group {
+            vc.delegate = self
+            vc.selectedGroup = group
         }
     }
     
