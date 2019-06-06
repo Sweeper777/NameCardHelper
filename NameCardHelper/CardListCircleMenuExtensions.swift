@@ -72,3 +72,40 @@ extension CardListController : CircleMenuDelegate {
         })
     }
 }
+
+extension CardListController : MoveToGroupControllerDelegate {
+    func didSelectGroup(moveToGroupController: MoveToGroupController, group: Group?) {
+        guard let selectedCard = self.selectedCard else { return }
+        let index = self.selectedCardIndex!
+        guard group != selectedCard.group.first else { return }
+        (cardCollectionView.collectionViewLayout as? HFCardCollectionViewLayout)?.unrevealCard(completion: {
+            [weak self] in
+            guard let `self` = self else { return }
+            self.shownCards.remove(at: index)
+            do {
+                try RealmWrapper.shared.realm.write {
+                    if let originalGroup = selectedCard.group.first {
+                        originalGroup.nameCards.remove(at: originalGroup.nameCards.index(of: selectedCard)!)
+                    }
+                    group?.nameCards.append(selectedCard)
+                }
+            } catch let error {
+                print(error)
+            }
+            if self.selectedGroup != .ungrouped {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                    [weak self] in
+                    self?.groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+                    self?.selectedGroup = .ungrouped
+                    self?.reloadCards()
+                })
+            } else {
+                if self.shownCards.count == 0 {
+                    self.cardCollectionView.reloadData()
+                } else {
+                    self.cardCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
+                }
+            }
+        })
+    }
+}
