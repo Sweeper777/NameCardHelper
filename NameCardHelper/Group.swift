@@ -14,6 +14,10 @@ class Group: Object {
     override var description: String {
         return name
     }
+    
+    static func ==(lhs: Group, rhs: Group) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
 
 extension Group {
