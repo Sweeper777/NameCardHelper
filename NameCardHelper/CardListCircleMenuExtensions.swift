@@ -49,6 +49,18 @@ extension CardListController : CircleMenuDelegate {
         }
     }
     
+    func addToContact() {
+        guard let selectedCard = self.selectedCard else { return }
+        let extractedInfo = selectedCard.extractInfo()
+        let contact = extractedInfo.contact
+        print(extractedInfo.remainingText)
+        let contactStore = CNContactStore()
+        let vc = CNContactViewController(forNewContact: contact)
+        vc.contactStore = contactStore
+        vc.delegate = self
+        self.present(MyNavigationController(rootViewController: vc) , animated: true, completion: nil)
+    }
+    
     func deleteCard(atIndex index: Int) {
         let card = shownCards[index]
         (cardCollectionView.collectionViewLayout as? HFCardCollectionViewLayout)?.unrevealCard(completion: {
