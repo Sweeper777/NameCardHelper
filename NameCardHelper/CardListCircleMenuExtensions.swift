@@ -48,6 +48,8 @@ extension CardListController : CircleMenuDelegate {
                 alert.showWarning("Confirm", subTitle: "This card has already been added to contact before. Do you want to add it again?")
             }
         } else if atIndex == 1 {
+            let layout = self.cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
+            layout.flipRevealedCard(toView: UITextView())
         }
     }
     
