@@ -11,11 +11,16 @@ extension NameCard {
         let types: NSTextCheckingResult.CheckingType = [.link, .address, .phoneNumber]
         let detector = try! NSDataDetector(types: types.rawValue)
         let contact = CNMutableContact()
+        var remainingText = ""
         for text in self.blocks.map({ $0.text }) {
+            let textCopy = NSMutableString(string: text)
             detector.enumerateMatches(in: text, options: [], range: NSRange(location: 0, length: text.count)) { (result, _, _) in
                 extractInfo(in: result, to: contact)
+                textCopy.replaceCharacters(in: result!.range, with: "")
             }
+            remainingText += "\n" + (textCopy as String)
         }
+        return ExtractedInfo(contact: contact, remainingText: remainingText.split(separator: "\n").map(String.init).filter { String($0).trimmed() != "" })
     }
     
     fileprivate func extractInfo(in result: NSTextCheckingResult?, to contact: CNMutableContact) {
