@@ -39,6 +39,12 @@ extension CardListController : CircleMenuDelegate {
         } else if atIndex == 2 {
             performSegue(withIdentifier: "showMoveToGroup", sender: selectedCard.group.first ?? .ungrouped)
         } else if atIndex == 4 {
+            if selectedCard.addedToContacts {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("Yes", action: addToContact)
+                alert.addButton("No", action: {})
+                alert.showWarning("Confirm", subTitle: "This card has already been added to contact before. Do you want to add it again?")
+            }
         } else if atIndex == 1 {
         }
     }
