@@ -10,6 +10,8 @@ class NameCard: Object {
     var uiColor: UIColor {
         return UIColor(rgb: color)
     }
+    
+    @objc dynamic var addedToContacts = false
 }
 
 extension UIColor {
