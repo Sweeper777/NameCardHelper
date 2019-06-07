@@ -2,6 +2,8 @@ import UIKit
 import CircleMenu
 import SCLAlertView
 import HFCardCollectionViewLayout
+import Contacts
+import ContactsUI
 
 extension CardListController : CircleMenuDelegate {
     func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
@@ -125,5 +127,11 @@ extension CardListController : MoveToGroupControllerDelegate {
                 }
             }
         })
+    }
+}
+
+extension CardListController : CNContactViewControllerDelegate {
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        viewController.dismiss(animated: true, completion: nil)
     }
 }
