@@ -8,6 +8,14 @@ struct ExtractedInfo {
 
 extension NameCard {
     func extractInfo() -> ExtractedInfo {
+        let types: NSTextCheckingResult.CheckingType = [.link, .address, .phoneNumber]
+        let detector = try! NSDataDetector(types: types.rawValue)
+        let contact = CNMutableContact()
+        for text in self.blocks.map({ $0.text }) {
+            detector.enumerateMatches(in: text, options: [], range: NSRange(location: 0, length: text.count)) { (result, _, _) in
+                extractInfo(in: result, to: contact)
+            }
+        }
     }
     
     fileprivate func extractInfo(in result: NSTextCheckingResult?, to contact: CNMutableContact) {
