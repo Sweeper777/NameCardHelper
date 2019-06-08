@@ -21,7 +21,7 @@ extension CardListController : UICollectionViewDelegateFlowLayout {
 }
 
 struct GroupSection: AnimatableSectionModelType {
-    typealias Item = Group
+    typealias Item = GroupStruct
     
     typealias Identity = String
     
@@ -41,10 +41,14 @@ struct GroupSection: AnimatableSectionModelType {
     }
 }
 
-extension Group : IdentifiableType {
+extension GroupStruct : IdentifiableType, Equatable {
     typealias Identity = String
     
     var identity: String {
-        return isInvalidated ? "deleted-object-\(UUID().uuidString)" : name
+        return name
+    }
+    
+    static func ==(lhs: GroupStruct, rhs: GroupStruct) -> Bool {
+        return lhs.name == rhs.name
     }
 }
