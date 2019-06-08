@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24CF2E3C73E431CCBD77F3C7 /* Pods_NameCardHelperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */; };
+		5A4CA9A122A3CD7300CF2934 /* NameCardInfoExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA9A022A3CD7200CF2934 /* NameCardInfoExtractor.swift */; };
 		5A4D26032264746D002FD19C /* TextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D26022264746D002FD19C /* TextBlock.swift */; };
 		5A4D260522647820002FD19C /* NameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260422647820002FD19C /* NameCard.swift */; };
 		5A4D260722647A73002FD19C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260622647A73002FD19C /* Group.swift */; };
@@ -48,6 +49,7 @@
 		1F4E5BB77C7F285B8D387D48 /* Pods_NameCardHelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameCardHelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AAADEDDE0F634B923CF213A /* Pods-NameCardHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper.release.xcconfig"; sourceTree = "<group>"; };
 		4BF5EFF1BCEE214D66C2EC2A /* Pods_NameCardHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameCardHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4CA9A022A3CD7200CF2934 /* NameCardInfoExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCardInfoExtractor.swift; sourceTree = "<group>"; };
 		5A4D26022264746D002FD19C /* TextBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBlock.swift; sourceTree = "<group>"; };
 		5A4D260422647820002FD19C /* NameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCard.swift; sourceTree = "<group>"; };
 		5A4D260622647A73002FD19C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				5A4D260622647A73002FD19C /* Group.swift */,
 				5A507C2D227441D80082D88C /* Constants.swift */,
 				5A5143F1227EF19F002991EE /* RealmWrapper.swift */,
+				5A4CA9A022A3CD7200CF2934 /* NameCardInfoExtractor.swift */,
 				5A5368A4226337A7006CC7E8 /* Main.storyboard */,
 				5A529EB9226720DD00E81D9A /* GoogleService-Info.plist */,
 				5A5368A7226337AA006CC7E8 /* Assets.xcassets */,
@@ -432,6 +435,7 @@
 				5A4F770D228FFBC100346F7B /* CardCollectionViewExtensions.swift in Sources */,
 				5A4D260522647820002FD19C /* NameCard.swift in Sources */,
 				5A4D260722647A73002FD19C /* Group.swift in Sources */,
+				5A4CA9A122A3CD7300CF2934 /* NameCardInfoExtractor.swift in Sources */,
 				5A507C2A22743FBC0082D88C /* CardOptionsController.swift in Sources */,
 				5A4D26032264746D002FD19C /* TextBlock.swift in Sources */,
 				5A5368A3226337A7006CC7E8 /* CardListController.swift in Sources */,
