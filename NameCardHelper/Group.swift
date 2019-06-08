@@ -41,4 +41,11 @@ struct GroupStruct {
         name = group.name
     }
     
+    func findCorrespondingGroupObject() -> Group {
+        if name == Group.ungrouped.name {
+            return .ungrouped
+        } else {
+            return RealmWrapper.shared.groups.filter(NSPredicate(format: "name == %@", name)).first!
+        }
+    }
 }
