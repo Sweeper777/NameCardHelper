@@ -14,9 +14,13 @@ extension NameCard {
         var remainingText = ""
         for text in self.blocks.map({ $0.text }) {
             let textCopy = NSMutableString(string: text)
+            var ranges = [NSRange]()
             detector.enumerateMatches(in: text, options: [], range: NSRange(location: 0, length: text.count)) { (result, _, _) in
                 extractInfo(in: result, to: contact)
-                textCopy.replaceCharacters(in: result!.range, with: "")
+                ranges.insert(result!.range, at: 0)
+            }
+            for range in ranges {
+                textCopy.replaceCharacters(in: range, with: "")
             }
             remainingText += "\n" + (textCopy as String)
         }
