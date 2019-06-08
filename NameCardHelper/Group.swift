@@ -33,3 +33,12 @@ extension Group {
         }
     }
 }
+
+struct GroupStruct {
+    let name: String
+    
+    init(group: Group) {
+        name = group.name
+    }
+    
+}
