@@ -77,19 +77,10 @@ extension CardListController : CircleMenuDelegate {
             } catch let error {
                 print(error)
             }
-            if self?.selectedGroup != .ungrouped {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                    [weak self] in
-                    self?.groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
-                    self?.selectedGroup = .ungrouped
-                    self?.reloadCards()
-                })
+            if self?.shownCards.count == 0 {
+                self?.cardCollectionView.reloadData()
             } else {
-                if self?.shownCards.count == 0 {
-                    self?.cardCollectionView.reloadData()
-                } else {
-                    self?.cardCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
-                }
+                self?.cardCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
             }
         })
     }
@@ -114,19 +105,10 @@ extension CardListController : MoveToGroupControllerDelegate {
             } catch let error {
                 print(error)
             }
-            if self.selectedGroup != .ungrouped {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                    [weak self] in
-                    self?.groupCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
-                    self?.selectedGroup = .ungrouped
-                    self?.reloadCards()
-                })
+            if self.shownCards.count == 0 {
+                self.cardCollectionView.reloadData()
             } else {
-                if self.shownCards.count == 0 {
-                    self.cardCollectionView.reloadData()
-                } else {
-                    self.cardCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
-                }
+                self.cardCollectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
             }
         })
     }
