@@ -24,7 +24,7 @@ class CardListController: UIViewController {
         ]
     
     let groupLabelFontSize = 17.f
-    var selectedGroup: Group?
+    var selectedGroup: GroupStruct?
     var shownCards: [NameCard]!
     
     var selectedCard: NameCard? {
@@ -48,6 +48,7 @@ class CardListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedGroup = GroupStruct(group: .ungrouped)
         shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
@@ -102,11 +103,12 @@ class CardListController: UIViewController {
         })
         observable.map { x -> [GroupSection] in
             let groups = [.ungrouped] + Array(x)
-            return [GroupSection(items: groups)]
+            let groupStructs = groups.map(GroupStruct.init)
+            return [GroupSection(items: groupStructs)]
         }
             .bind(to: groupCollectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        groupCollectionView.rx.modelSelected(Group.self).bind { [weak self] (group) in
+        groupCollectionView.rx.modelSelected(GroupStruct.self).bind { [weak self] (group) in
             guard let `self` = self else { return }
             guard group != self.selectedGroup else { return }
             self.selectedGroup = group
@@ -142,7 +144,8 @@ class CardListController: UIViewController {
         if gestureRecogniser.state == .began {
             let point = gestureRecogniser.location(ofTouch: 0, in: self.groupCollectionView)
             guard let index = groupCollectionView.indexPathForItem(at: point) else { return }
-            guard let group: Group = try? groupCollectionView.rx.model(at: index) else { return }
+            guard let groupStruct: GroupStruct = try? groupCollectionView.rx.model(at: index) else { return }
+            let group = groupStruct.findCorrespondingGroupObject()
             guard group != .ungrouped else { return }
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "Delete \"\(group.name)\"", style: .destructive, handler: {
@@ -254,7 +257,8 @@ class CardListController: UIViewController {
         if selectedGroup?.name == "Ungrouped" {
             shownCards = Array(RealmWrapper.shared.cards.filter(NSPredicate(format: "group.@count == 0")))
         } else {
-            shownCards = (selectedGroup?.nameCards).map { Array($0) } ?? []
+            let selectedGroupObject = selectedGroup?.findCorrespondingGroupObject()
+            shownCards = (selectedGroupObject?.nameCards).map { Array($0) } ?? []
         }
         cardCollectionView.reloadData()
         (cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout).unrevealCard()
