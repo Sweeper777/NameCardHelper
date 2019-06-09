@@ -42,4 +42,8 @@ class MoveToGroupController : UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
 }
