@@ -21,7 +21,7 @@ class PreviewController: UIViewController {
             return
         }
         
-        EZLoadingActivity.show("Generating Preview...", disableUI: false)
+        EZLoadingActivity.show("Generating Preview...", disableUI: true)
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
         let vImage = VisionImage(image: imageToProcess)
