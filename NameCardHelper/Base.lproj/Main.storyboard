@@ -104,12 +104,13 @@
                         <segue destination="PEJ-qV-Kvz" kind="show" identifier="showPreview" id="2l3-6w-5td"/>
                         <segue destination="QjA-Vj-igU" kind="show" identifier="zoomIn" id="ydN-jT-Spd"/>
                         <segue destination="Y9b-SV-rvC" kind="presentation" identifier="showMoveToGroup" id="N5D-IB-MAD"/>
+                        <segue destination="ozf-qK-X1w" kind="presentation" identifier="showAddToContacts" modalPresentationStyle="formSheet" id="WXU-VU-lcY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="saC-wM-Zys" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-742" y="235"/>
+            <point key="canvasLocation" x="-743" y="41"/>
         </scene>
         <!--Move to...-->
         <scene sceneID="cMj-2T-1U5">
@@ -144,7 +145,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Move to..." id="K8Q-AV-YtF">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dEL-Pr-W85"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dEL-Pr-W85">
+                            <connections>
+                                <action selector="cancel" destination="ZdC-NE-JT2" id="R16-79-Anl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dQ-oP-fg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,6 +171,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Atz-VO-jPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-743" y="1173"/>
+        </scene>
+        <!--My Navigation Controller-->
+        <scene sceneID="lYO-6y-bCd">
+            <objects>
+                <navigationController id="ozf-qK-X1w" customClass="MyNavigationController" customModule="NameCardHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uk1-Of-La5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sM2-G6-jDn" kind="relationship" relationship="rootViewController" id="gtT-Yj-6Ra"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUI-I1-dPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="41"/>
+        </scene>
+        <!--Add to Contacts-->
+        <scene sceneID="x6K-5e-zHZ">
+            <objects>
+                <viewController id="sM2-G6-jDn" customClass="AddToContactsController" customModule="NameCardHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Pi-OF-OjO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="k4h-rG-jR1"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add to Contacts" id="uOw-jY-Nb6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qdP-FF-04p">
+                            <connections>
+                                <action selector="cancel" destination="sM2-G6-jDn" id="Vvf-FS-jvJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHL-K4-Czq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="41"/>
         </scene>
         <!--My Navigation Controller-->
         <scene sceneID="291-wr-tbl">
