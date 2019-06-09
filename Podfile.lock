@@ -119,6 +119,10 @@ PODS:
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SCLAlertView (0.8)
   - SnapKit (4.2.0)
+  - SplitRow (1.3.0):
+    - Eureka (~> 4.3)
+  - SuggestionRow (2.2.0):
+    - Eureka (~> 4.0)
   - SwiftyUtils (3.0.0)
   - UIColor_Hex_Swift (4.2.0)
   - ViewRow (0.4.0):
@@ -141,6 +145,8 @@ DEPENDENCIES:
   - RxSwift
   - SCLAlertView
   - SnapKit
+  - SplitRow
+  - SuggestionRow
   - SwiftyUtils (from `https://github.com/tbaranes/SwiftyUtils.git`, commit `982bffaadf8e831e75d3444dfba56af4d3962224`)
   - ViewRow (from `https://github.com/EurekaCommunity/ViewRow`)
 
@@ -176,6 +182,8 @@ SPEC REPOS:
     - RxSwift
     - SCLAlertView
     - SnapKit
+    - SplitRow
+    - SuggestionRow
     - UIColor_Hex_Swift
 
 EXTERNAL SOURCES:
@@ -230,10 +238,12 @@ SPEC CHECKSUMS:
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SplitRow: fdd2551941aa0bf29f98e6b973c94a3b03ace038
+  SuggestionRow: 694a6ed2fae513b4234bda76126eaffb287a732e
   SwiftyUtils: 9d09fedd742f9959e5682784657e913d5c554e6d
   UIColor_Hex_Swift: bc07fc197421ee896b9ed6dcfa2054b7fbf75145
   ViewRow: 513d444dcfe53d58f8a6469065329c507c5e4973
 
-PODFILE CHECKSUM: 9a8bb03475693e1215b2c88ba5f5f2c4e97d5ad4
+PODFILE CHECKSUM: 4a37a0fdbd570222c7a4bee13974d270712b0be1
 
 COCOAPODS: 1.5.3

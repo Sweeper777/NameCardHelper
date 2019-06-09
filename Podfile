@@ -23,6 +23,8 @@ target 'NameCardHelper' do
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'RxRealm'
+  pod 'SplitRow'
+  pod 'SuggestionRow'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths

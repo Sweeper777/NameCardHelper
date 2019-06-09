@@ -1,0 +1,6 @@
+framework module SplitRow {
+  umbrella header "SplitRow-umbrella.h"
+
+  export *
+  module * { export * }
+}
