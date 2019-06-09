@@ -30,13 +30,13 @@ extension NameCard {
     fileprivate func extractInfo(in result: NSTextCheckingResult?, to contact: CNMutableContact) {
         if let link = result?.url {
             if link.scheme == "mailto" {
-                contact.emailAddresses.append(CNLabeledValue(label: "Work", value: (link as NSURL).resourceSpecifier! as NSString))
+                contact.emailAddresses.append(CNLabeledValue(label: "work", value: (link as NSURL).resourceSpecifier! as NSString))
             } else {
-                contact.urlAddresses.append(CNLabeledValue(label: "Work", value: link.absoluteString as NSString))
+                contact.urlAddresses.append(CNLabeledValue(label: "work", value: link.absoluteString as NSString))
             }
         }
         if let phone = result?.phoneNumber {
-            contact.phoneNumbers.append(CNLabeledValue(label: "Unlabeled", value: CNPhoneNumber(stringValue: phone)))
+            contact.phoneNumbers.append(CNLabeledValue(label: "mobile", value: CNPhoneNumber(stringValue: phone)))
         }
         if let address = result?.addressComponents {
             let cnAddress = CNMutablePostalAddress()
