@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0D41634A836FAE6D4E8FB61D4C9B15A4"
-               BlueprintName = "SwiftyUtils"
+               BlueprintIdentifier = "2FF2ECAB83C57DFC71B840E3A20164C3"
+               BlueprintName = "PostalAddressRow"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftyUtils.framework">
+               BuildableName = "PostalAddressRow.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

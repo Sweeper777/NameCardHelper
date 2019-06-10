@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D17608D5BF751D09D27A6C2EEBF0C146"
+               BlueprintIdentifier = "739C538E0385713CF0AF42A7084004C3"
                BlueprintName = "SplitRow"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SplitRow.framework">

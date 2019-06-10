@@ -1,0 +1,6 @@
+framework module FloatLabelRow {
+  umbrella header "FloatLabelRow-umbrella.h"
+
+  export *
+  module * { export * }
+}

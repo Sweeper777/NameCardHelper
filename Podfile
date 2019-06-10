@@ -25,6 +25,8 @@ target 'NameCardHelper' do
   pod 'RxRealm'
   pod 'SplitRow'
   pod 'SuggestionRow'
+  pod 'PostalAddressRow'
+  pod 'FloatLabelRow', :git => 'https://github.com/larsacus/FloatLabelRow', :branch => 'ExposeColorProperties'
 
   target 'NameCardHelperTests' do
     inherit! :search_paths

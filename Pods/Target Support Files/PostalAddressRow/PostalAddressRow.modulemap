@@ -1,0 +1,6 @@
+framework module PostalAddressRow {
+  umbrella header "PostalAddressRow-umbrella.h"
+
+  export *
+  module * { export * }
+}
