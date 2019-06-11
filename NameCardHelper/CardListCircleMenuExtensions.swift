@@ -46,6 +46,8 @@ extension CardListController : CircleMenuDelegate {
                 alert.addButton("Yes", action: addToContact)
                 alert.addButton("No", action: {})
                 alert.showWarning("Confirm", subTitle: "This card has already been added to contact before. Do you want to add it again?")
+            } else {
+                addToContact()
             }
         } else if atIndex == 1 {
             let layout = self.cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
@@ -56,13 +58,7 @@ extension CardListController : CircleMenuDelegate {
     func addToContact() {
         guard let selectedCard = self.selectedCard else { return }
         let extractedInfo = selectedCard.extractInfo()
-        let contact = extractedInfo.contact
-        print(extractedInfo.remainingText)
-        let contactStore = CNContactStore()
-        let vc = CNContactViewController(forNewContact: contact)
-        vc.contactStore = contactStore
-        vc.delegate = self
-        self.present(MyNavigationController(rootViewController: vc) , animated: true, completion: nil)
+        performSegue(withIdentifier: "showAddToContacts", sender: (selectedCard, extractedInfo))
     }
     
     func deleteCard(atIndex index: Int) {
