@@ -109,9 +109,3 @@ extension CardListController : MoveToGroupControllerDelegate {
         })
     }
 }
-
-extension CardListController : CNContactViewControllerDelegate {
-    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
-        viewController.dismiss(animated: true, completion: nil)
-    }
-}
