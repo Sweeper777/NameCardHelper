@@ -242,6 +242,10 @@ class CardListController: UIViewController {
             let group = sender as? Group {
             vc.delegate = self
             vc.selectedGroup = group
+        } else if let vc = (segue.destination as? UINavigationController)?.topViewController as? AddToContactsController,
+            let info = sender as? (NameCard, ExtractedInfo) {
+            vc.nameCard = info.0
+            vc.extractedInfo = info.1
         }
     }
     
