@@ -28,6 +28,12 @@ class AddToContactsController: FormViewController {
             row.filterFunction = filterFunction
         }
         
+        <<< SuggestionAccessoryRow<String>(tagJobTitle) {
+            row in
+            row.title = "Job Title"
+            row.filterFunction = filterFunction
+        }
+
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
