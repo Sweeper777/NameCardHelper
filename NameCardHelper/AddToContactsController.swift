@@ -10,5 +10,8 @@ class AddToContactsController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    func filterFunction(text: String) -> [String] {
+        return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
+    }
     }
 }
