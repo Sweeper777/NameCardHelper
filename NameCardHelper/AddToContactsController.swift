@@ -134,5 +134,16 @@ class AddToContactsController: FormViewController {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
 }
+
+extension AddToContactsController : CNContactViewControllerDelegate {
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        if contact != nil {
+            try? RealmWrapper.shared.realm.write {
+                [weak self] in
+                self?.nameCard.addedToContacts = true
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
