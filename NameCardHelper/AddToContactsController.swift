@@ -44,6 +44,24 @@ class AddToContactsController: FormViewController {
                     cell.backgroundColor = .black
                 })
         
+        let phoneSection = Section("phone/fax")
+        
+        for (i, phoneNumber) in extractedInfo.contact.phoneNumbers.enumerated() {
+            phoneSection <<< SplitRow<TextFloatLabelRow, TextRow>(tagPhone + "\(i)") {
+                row in
+                row.rowLeft = TextFloatLabelRow() {
+                    rowLeft in
+                    rowLeft.cell.textField.autocapitalizationType = .none
+                    rowLeft.title = "Type"
+                    rowLeft.value = phoneNumber.label
+                }
+                row.rowRight = TextRow() {
+                    rowRight in
+                    rowRight.value = phoneNumber.value.stringValue
+                }
+                row.rowLeftPercentage = 0.4
+            }
+        }
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
