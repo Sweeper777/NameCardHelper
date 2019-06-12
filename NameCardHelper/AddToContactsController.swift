@@ -106,6 +106,25 @@ class AddToContactsController: FormViewController {
         
         form +++ emailSection
         
+        let urlSection = Section("website")
+        for (i, url) in extractedInfo.contact.urlAddresses.enumerated() {
+            urlSection <<< SplitRow<TextFloatLabelRow, TextRow>(tagURL + "\(i)") {
+                row in
+                row.rowLeft = TextFloatLabelRow() {
+                    rowLeft in
+                    rowLeft.cell.textField.autocapitalizationType = .none
+                    rowLeft.title = "Type"
+                    rowLeft.value = url.label
+                }
+                row.rowRight = TextRow() {
+                    rowRight in
+                    rowRight.value = url.value as String
+                }
+                row.rowLeftPercentage = 0.4
+            }
+        }
+        
+        form +++ urlSection
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
