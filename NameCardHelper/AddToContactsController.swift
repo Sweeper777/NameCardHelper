@@ -85,6 +85,27 @@ class AddToContactsController: FormViewController {
         }
         
         form +++ addressSection
+        
+        let emailSection = Section("email")
+        for (i, email) in extractedInfo.contact.emailAddresses.enumerated() {
+            emailSection <<< SplitRow<TextFloatLabelRow, TextRow>(tagEmail + "\(i)") {
+                row in
+                row.rowLeft = TextFloatLabelRow() {
+                    rowLeft in
+                    rowLeft.cell.textField.autocapitalizationType = .none
+                    rowLeft.title = "Type"
+                    rowLeft.value = email.label
+                }
+                row.rowRight = TextRow() {
+                    rowRight in
+                    rowRight.value = email.value as String
+                }
+                row.rowLeftPercentage = 0.4
+            }
+        }
+        
+        form +++ emailSection
+        
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
