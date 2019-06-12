@@ -62,6 +62,29 @@ class AddToContactsController: FormViewController {
                 row.rowLeftPercentage = 0.4
             }
         }
+        
+        form +++ phoneSection
+        
+        let addressSection = Section("address")
+        for (i, address) in extractedInfo.contact.postalAddresses.enumerated() {
+            addressSection <<< PostalAddressRow() {
+                row in
+                row.tag = tagAddress + "\(i)"
+                row.streetPlaceholder = "Street"
+                row.statePlaceholder = "State"
+                row.cityPlaceholder = "City"
+                row.countryPlaceholder = "Country"
+                row.postalCodePlaceholder = "Zip code"
+                row.value = PostalAddress(
+                    street: address.value.street,
+                    state: address.value.state,
+                    postalCode: address.value.postalCode,
+                    city: address.value.city,
+                    country: address.value.country)
+            }
+        }
+        
+        form +++ addressSection
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
