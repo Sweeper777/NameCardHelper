@@ -125,8 +125,14 @@ class AddToContactsController: FormViewController {
         }
         
         form +++ urlSection
+    }
+    
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
+}
     }
 }
