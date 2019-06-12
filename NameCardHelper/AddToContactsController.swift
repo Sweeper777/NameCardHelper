@@ -34,6 +34,16 @@ class AddToContactsController: FormViewController {
             row.filterFunction = filterFunction
         }
 
+        form +++ Section("preview")
+            
+            <<< ViewRow<UIView>(tagPreview) {
+                row in
+                
+                }.cellSetup({ [weak self] (cell, row) in
+                    cell.view = self?.nameCard.createCardView(withWidth: cell.width - cell.viewLeftMargin - cell.viewRightMargin)
+                    cell.backgroundColor = .black
+                })
+        
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }
