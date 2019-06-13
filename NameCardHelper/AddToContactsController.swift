@@ -148,6 +148,11 @@ class AddToContactsController: FormViewController {
         if let jobTitle = values[tagJobTitle] as? String {
             extractedInfo.contact.jobTitle = jobTitle
         }
+        for i in 0..<extractedInfo.contact.phoneNumbers.count {
+            if let splitValue = values[tagPhone + "\(i)"] as? SplitRowValue<String, String> {
+                extractedInfo.contact.phoneNumbers[i] = CNLabeledValue(label: splitValue.left ?? "", value: CNPhoneNumber(stringValue: splitValue.right ?? ""))
+            }
+        }
     }
     
     func filterFunction(text: String) -> [String] {
