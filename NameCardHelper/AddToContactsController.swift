@@ -175,6 +175,12 @@ class AddToContactsController: FormViewController {
             }
         }
         
+        let contact = extractedInfo.contact
+        let contactStore = CNContactStore()
+        let vc = CNContactViewController(forUnknownContact: contact)
+        vc.contactStore = contactStore
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func filterFunction(text: String) -> [String] {
