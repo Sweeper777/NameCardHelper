@@ -142,6 +142,12 @@ class AddToContactsController: FormViewController {
             extractedInfo.contact.familyName = components?.familyName ?? ""
             extractedInfo.contact.middleName = components?.middleName ?? ""
         }
+        if let company = values[tagCompany] as? String {
+            extractedInfo.contact.organizationName = company
+        }
+        if let jobTitle = values[tagJobTitle] as? String {
+            extractedInfo.contact.jobTitle = jobTitle
+        }
     }
     
     func filterFunction(text: String) -> [String] {
