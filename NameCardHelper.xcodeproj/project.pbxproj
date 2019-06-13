@@ -32,6 +32,7 @@
 		5A5368A8226337AA006CC7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5368A7226337AA006CC7E8 /* Assets.xcassets */; };
 		5A5368AB226337AA006CC7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A5368A9226337AA006CC7E8 /* LaunchScreen.storyboard */; };
 		5A5368B6226337AA006CC7E8 /* NameCardHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5368B5226337AA006CC7E8 /* NameCardHelperTests.swift */; };
+		5A5DD6FE22ABCED2003D1CEA /* AddToContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5DD6FD22ABCED2003D1CEA /* AddToContactsController.swift */; };
 		AD392CAE758C520D6C60BA31 /* Pods_NameCardHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF5EFF1BCEE214D66C2EC2A /* Pods_NameCardHelper.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		5A5368B1226337AA006CC7E8 /* NameCardHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NameCardHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5368B5226337AA006CC7E8 /* NameCardHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCardHelperTests.swift; sourceTree = "<group>"; };
 		5A5368B7226337AA006CC7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A5DD6FD22ABCED2003D1CEA /* AddToContactsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToContactsController.swift; sourceTree = "<group>"; };
 		646321DFC2B46270D95FC8B1 /* Pods-NameCardHelperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelperTests/Pods-NameCardHelperTests.release.xcconfig"; sourceTree = "<group>"; };
 		B7AF3A64067D062264502FCF /* Pods-NameCardHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelper/Pods-NameCardHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		FCB42F72D46ADDC058294B56 /* Pods-NameCardHelperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameCardHelperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NameCardHelperTests/Pods-NameCardHelperTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				5A507C2922743FBC0082D88C /* CardOptionsController.swift */,
 				5A4FB4FB22873623005EC954 /* ZoomViewController.swift */,
 				5A4E017722A124F50042C913 /* MoveToGroupController.swift */,
+				5A5DD6FD22ABCED2003D1CEA /* AddToContactsController.swift */,
 				5A4E017922A177E90042C913 /* MoveToGroupControllerDelegate.swift */,
 				5A4FB4FD2287392D005EC954 /* MyControllers.swift */,
 				5A4FB4F92286B90C005EC954 /* GroupCollectionCell.swift */,
@@ -321,11 +324,13 @@
 				"${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework",
 				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/FloatLabelRow/FloatLabelRow.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/HFCardCollectionViewLayout/HFCardCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/PostalAddressRow/PostalAddressRow.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -336,6 +341,8 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SplitRow/SplitRow.framework",
+				"${BUILT_PRODUCTS_DIR}/SuggestionRow/SuggestionRow.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewRow/ViewRow.framework",
@@ -351,11 +358,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZLoadingActivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatLabelRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HFCardCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PostalAddressRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -366,6 +375,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SplitRow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SuggestionRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewRow.framework",
@@ -430,6 +441,7 @@
 				5A529EB62267106900E81D9A /* PreviewController.swift in Sources */,
 				5A4FB4FA2286B90C005EC954 /* GroupCollectionCell.swift in Sources */,
 				5A4E017A22A177E90042C913 /* MoveToGroupControllerDelegate.swift in Sources */,
+				5A5DD6FE22ABCED2003D1CEA /* AddToContactsController.swift in Sources */,
 				5A4F7711228FFCA300346F7B /* CardListCircleMenuExtensions.swift in Sources */,
 				5A4F770F228FFC3300346F7B /* GroupCollectionViewExtensions.swift in Sources */,
 				5A4F770D228FFBC100346F7B /* CardCollectionViewExtensions.swift in Sources */,

@@ -130,6 +130,11 @@ class AddToContactsController: FormViewController {
     @IBAction func cancel() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func next() {
+        let values = form.values()
+    }
+    
     func filterFunction(text: String) -> [String] {
         return self.extractedInfo.remainingText.filter { text == "" || $0.contains(text) }
     }

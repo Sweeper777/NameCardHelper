@@ -204,6 +204,11 @@
                                 <action selector="cancel" destination="sM2-G6-jDn" id="Vvf-FS-jvJ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="OiE-bw-Psb">
+                            <connections>
+                                <action selector="next" destination="sM2-G6-jDn" id="Ic9-82-oXV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHL-K4-Czq" userLabel="First Responder" sceneMemberID="firstResponder"/>
