@@ -164,6 +164,17 @@ class AddToContactsController: FormViewController {
                 extractedInfo.contact.postalAddresses[i] = CNLabeledValue(label: "Company", value: cnAddress as CNPostalAddress)
             }
         }
+        for i in 0..<extractedInfo.contact.emailAddresses.count {
+            if let splitValue = values[tagEmail + "\(i)"] as? SplitRowValue<String, String> {
+                extractedInfo.contact.emailAddresses[i] = CNLabeledValue(label: splitValue.left ?? "", value: (splitValue.right ?? "") as NSString)
+            }
+        }
+        for i in 0..<extractedInfo.contact.urlAddresses.count {
+            if let splitValue = values[tagURL + "\(i)"] as? SplitRowValue<String, String> {
+                extractedInfo.contact.urlAddresses[i] = CNLabeledValue(label: splitValue.left ?? "", value: (splitValue.right ?? "") as NSString)
+            }
+        }
+        
     }
     
     func filterFunction(text: String) -> [String] {
