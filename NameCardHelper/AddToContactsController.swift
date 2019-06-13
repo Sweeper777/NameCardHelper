@@ -133,6 +133,15 @@ class AddToContactsController: FormViewController {
     
     @IBAction func next() {
         let values = form.values()
+        if let name = values[tagFullName] as? String {
+            let formatter = PersonNameComponentsFormatter()
+            let components = formatter.personNameComponents(from: name)
+            extractedInfo.contact.namePrefix = components?.namePrefix ?? ""
+            extractedInfo.contact.nameSuffix = components?.nameSuffix ?? ""
+            extractedInfo.contact.givenName = components?.givenName ?? ""
+            extractedInfo.contact.familyName = components?.familyName ?? ""
+            extractedInfo.contact.middleName = components?.middleName ?? ""
+        }
     }
     
     func filterFunction(text: String) -> [String] {
