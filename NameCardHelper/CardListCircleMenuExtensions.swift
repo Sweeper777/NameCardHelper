@@ -51,7 +51,10 @@ extension CardListController : CircleMenuDelegate {
             }
         } else if atIndex == 1 {
             let layout = self.cardCollectionView.collectionViewLayout as! HFCardCollectionViewLayout
-            layout.flipRevealedCard(toView: UITextView())
+            let container = UIView()
+            container.backgroundColor = selectedCard.uiColor
+            container.tag = containerViewTag
+            layout.flipRevealedCard(toView: container)
         }
     }
     
