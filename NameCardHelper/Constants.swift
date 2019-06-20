@@ -12,3 +12,5 @@ let tagPhone = "phone"
 let tagAddress = "address"
 let tagEmail = "email"
 let tagURL = "url"
+
+let containerViewTag = 777
