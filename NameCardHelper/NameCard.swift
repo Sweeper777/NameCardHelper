@@ -6,6 +6,7 @@ class NameCard: Object {
     let blocks = List<TextBlock>()
     let group = LinkingObjects(fromType: Group.self, property: "nameCards")
     @objc dynamic var aspectRatio = 0.0
+    @objc dynamic var backsideText = ""
     
     var uiColor: UIColor {
         return UIColor(rgb: color)
