@@ -66,6 +66,10 @@ extension CardListController : CircleMenuDelegate {
             textView.font = UIFont.systemFont(ofSize: 16)
             textView.text = selectedCard.backsideText
             
+            let button = UIButton(type: .system)
+            button.setTitle("Done", for: .normal)
+            button.addTarget(self, action: #selector(doneEditingCardBack), for: .touchUpInside)
+            container.addSubview(button)
             layout.flipRevealedCard(toView: container)
         }
     }
