@@ -56,6 +56,12 @@ extension CardListController : CircleMenuDelegate {
             container.tag = containerViewTag
             let textView = UITextView()
             container.addSubview(textView)
+            textView.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(16)
+                make.right.equalToSuperview().offset(-16)
+                make.top.equalToSuperview().offset(16)
+                make.bottom.equalToSuperview().offset(-70)
+            }
             textView.backgroundColor = .clear
             textView.font = UIFont.systemFont(ofSize: 16)
             textView.text = selectedCard.backsideText
