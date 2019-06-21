@@ -85,6 +85,18 @@ extension CardListController : CircleMenuDelegate {
         performSegue(withIdentifier: "showAddToContacts", sender: (selectedCard, extractedInfo))
     }
     
+    @objc func doneEditingCardBack() {
+        if let layout = cardCollectionView.collectionViewLayout as? HFCardCollectionViewLayout,
+            let selectedCard = self.selectedCard,
+            let cardView = cardCollectionView.cellForItem(at: IndexPath(item: layout.revealedIndex, section: 0)),
+            let textView = cardView.viewWithTag(containerViewTag)?.subviews.first as? UITextView {
+            try? RealmWrapper.shared.realm.write {
+                selectedCard.backsideText = textView.text
+            }
+            layout.flipRevealedCardBack()
+        }
+    }
+    
     func deleteCard(atIndex index: Int) {
         let card = shownCards[index]
         (cardCollectionView.collectionViewLayout as? HFCardCollectionViewLayout)?.unrevealCard(completion: {
