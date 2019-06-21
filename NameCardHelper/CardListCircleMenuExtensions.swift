@@ -70,6 +70,11 @@ extension CardListController : CircleMenuDelegate {
             button.setTitle("Done", for: .normal)
             button.addTarget(self, action: #selector(doneEditingCardBack), for: .touchUpInside)
             container.addSubview(button)
+            button.snp.makeConstraints { (make) in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(textView.snp.bottom).offset(8)
+            }
+            
             layout.flipRevealedCard(toView: container)
         }
     }
