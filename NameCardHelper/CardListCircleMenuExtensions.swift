@@ -54,6 +54,12 @@ extension CardListController : CircleMenuDelegate {
             let container = UIView()
             container.backgroundColor = selectedCard.uiColor
             container.tag = containerViewTag
+            let textView = UITextView()
+            container.addSubview(textView)
+            textView.backgroundColor = .clear
+            textView.font = UIFont.systemFont(ofSize: 16)
+            textView.text = selectedCard.backsideText
+            
             layout.flipRevealedCard(toView: container)
         }
     }
